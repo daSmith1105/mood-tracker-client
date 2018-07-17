@@ -1,0 +1,244 @@
+.App {
+    width: 100vw;
+    font-size: 16px;
+}
+
+.border-red {
+    border: 2px solid red;
+    padding: .5em;
+    margin: 1em;
+}
+
+.border-green {
+    border: 2px solid green;
+    padding: .5em;
+    margin: 1em;
+}
+
+
+/*header bar styling*/
+
+.header {
+    text-align: center;
+    position: fixed;
+    padding: .5em;
+    height: 3em;
+    background-color: goldenrod;
+    width: 100vw;
+    z-index: 1;
+}
+
+.home-link {
+    position: absolute;
+    top: .5em;
+    left: .5em;
+}
+
+.app-title {
+    font-size: 60%;
+}
+
+.logout-link {
+    position: absolute;
+    top: .5em;
+    right: .5em;
+}
+
+.home-link a,
+.logout-link a {
+    color: white;
+}
+
+
+/*footer bar styling*/
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: .5em;
+    height: 3em;
+    width: 100vw;
+    text-align: left;
+    background-color: goldenrod;
+    z-index: 1;
+}
+
+.footer a {
+    color: white;
+}
+
+
+/*landing page styling*/
+
+.landing-page {
+    padding: .5em;
+    text-align: center;
+    padding-top: 4em;
+}
+
+.landing-welcome {
+    font-size: 150%;
+    margin-bottom: 0;
+}
+
+.landing-tagline {
+    font-size: 120%;
+    margin-top: 0;
+}
+
+.landing-description {
+    font-size: 80%;
+    font-style: italic;
+}
+
+.landing-purpose {
+    font-size: 90%;
+}
+
+.landing-bullets {
+    font-size: 70%;
+    width: 80%;
+    max-width: 240px;
+    margin: auto;
+    text-align: left;
+}
+
+.landing-action-call {
+    font-size: 160%;
+    margin-bottom: 0;
+}
+
+.landing-links {
+    font-size: 160%;
+    margin-top: .5em;
+}
+
+.landing-link-login {
+    margin-right: 1em;
+}
+
+.landing-link-signup {
+    margin-left: 1em;
+}
+
+
+/* login styling */
+
+.login {
+    padding-top: 4em;
+}
+
+
+/* signup styling */
+
+.signup {
+    padding-top: 4em;
+}
+
+
+/*dashboard page styling*/
+
+.dashboard {
+    text-align: center;
+    padding-top: 4em;
+}
+
+.dashboard-greeting {
+    margin-top: 2em;
+}
+
+.dashboard-greeting h1 {
+    font-size: 220%;
+}
+
+.dashboard-greeting h2 {
+    font-size: 180%;
+}
+
+.dashboard-circle-container {
+    background-color: green;
+    border: 2px solid green;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    margin: auto;
+}
+
+.dashboard-question {
+    padding: .5em;
+}
+
+.dashboard-question-text {
+    font-size: 110%;
+    margin-top: 4.75em;
+}
+
+.link-white {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* notes component styling */
+
+.note-area {
+    width: 90%;
+    max-width: 600px;
+    padding: .5em;
+    border-radius: .5em;
+    min-height: 40vh;
+    height: auto;
+}
+
+.mood-recap {
+    float: left;
+    padding: .5em;
+}
+
+.intensity-recap {
+    margin-left: .25em;
+    border-radius: 50%;
+    padding-left: .5em;
+    padding-right: .5em;
+    padding-top: .25em;
+    padding-bottom: .25em;
+    border: 1px solid goldenrod;
+    background-color: goldenrod;
+}
+
+.selected-moods-container {
+    text-align: center;
+    padding: .5em;
+}
+
+
+/* confirmation styling */
+
+.note-confirm {
+    height: auto;
+    min-height: 40vh;
+    border: 1px solid grey;
+    border-radius: .5em;
+    width: 100%;
+    padding: .5em;
+    word-wrap: break-word
+}
+
+
+/* mood conrimation styling */
+
+.mood-confirm {
+    max-width: 600px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* mood log styling */
+
+.mood-log {
+    padding-top: 4em;
+    text-align: center;
+}
