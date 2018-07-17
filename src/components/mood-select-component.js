@@ -142,7 +142,7 @@ class MoodSelectComponent extends Component {
                                     <Radio value={2} name="happy">2</Radio>
                                     <Radio value={3} name="happy">3</Radio>
                                 </RadioGroup>
-                                <button onClick={() => {this.clear}}>N/A</button>
+                                <button>N/A</button>
                             </Col>
                         </Row>
                         </Col>
