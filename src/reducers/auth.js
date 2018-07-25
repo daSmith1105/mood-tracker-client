@@ -4,7 +4,6 @@ import {
     AUTH_REQUEST,
     AUTH_SUCCESS,
     AUTH_ERROR,
-    INFO_TOGGLE
 } from '../actions/auth';
 
 const initialState = {
@@ -40,10 +39,6 @@ export default function reducer(state = initialState, action) {
             loading: false,
             error: action.error
         });
-    } else if (action.type === INFO_TOGGLE) {
-        return Object.assign({}, state, {
-            info: !state.info
-        });
-    }
-    return state;
+    } 
+        return state;
 }

@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import {Redirect} from 'react-router-dom';
 import MoodSelectComponent from './mood-select-component';
 import NoteComponent from './note-component';
 import MoodConfirmComponent from './mood-confirm-component';
 import { Tabs, Row, Col, Badge} from 'antd';
+import {API_BASE_URL} from '../config';
 import './antd.css';
 import './spacing.css';
 
 const TabPane = Tabs.TabPane;
 
-class MoodNav extends Component {
-
+export default class MoodNav extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -55,14 +54,67 @@ tabHeader = (num, txt) => {
                   </span>
 };
 
-  render() {
-   
-    if (this.state.complete){
+currentDate = () => {
 
-       return <Redirect to='/mood-log'/>
+        let today = new Date();
+        let dd = today.getDate();
+        
+        let mm = today.getMonth()+1; 
+        const yyyy = today.getFullYear();
+        if(dd<10) 
+        {
+            dd=`0${dd}`;
+        } 
+        
+        if(mm<10) 
+        {
+            mm=`0${mm}`;
+        } 
+        today = `${mm}/${dd}/${yyyy}`;
+
+        return (today)
     }
+
+  render() {
+
+    if (this.state.complete) {
+
+      const createdOn = this.currentDate();
+      const userMoods = this.state.stepResults.step1; 
+      const userNote = this.state.stepResults.step2.note.toString();
+      console.log(typeof createdOn);
+
+      const moodArray = Object.keys(userMoods).map((keyName, keyIndex) => {
+        return (
+          keyName + ": " + userMoods[keyName]
+        )
+      })
+        console.log(createdOn);
+        console.log(moodArray);
+
+        const entry = [
+            {
+                created: createdOn,
+                mood: moodArray,
+                note: userNote
+        }
+        ];
+
+        return fetch(`${API_BASE_URL}/moods`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(entry)
+        })
+            .then(res => res.json())
+            .catch(err => {
+                console.log(err);
+            })
+        }
+
     return (
-   <div className="tab-nav" style={{textAlign: 'center'}}>
+        <div className="tab-nav" style={{textAlign: 'center'}}>
             <Row type={'flex'} align={'center'} className={'m-t-l'} style={{width: '100vw', paddingTop: '4em'}}>
               <Col span={24}>
 
@@ -89,8 +141,6 @@ tabHeader = (num, txt) => {
               </Col>
           </Row>
       </div>
-    );
-  }
+      )
+    }
 }
-
-export default MoodNav;

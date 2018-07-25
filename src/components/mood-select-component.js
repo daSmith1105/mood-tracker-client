@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col, Radio, Divider, Button } from 'antd';
 import {Link} from 'react-router-dom';
-import _ from 'lodash';
 const RadioGroup = Radio.Group;
 
 class MoodSelectComponent extends Component {
@@ -13,20 +12,7 @@ class MoodSelectComponent extends Component {
         };
     }
 
-    clear = () => {
-        const state = {
-            data: _.omit(this.state.data, 'happy')
-        };
-
-        this.setState({data: state})
-
-        console.log(this.state.data);
-    }
-
     onChangeHappy= (el) => {
-      //  console.log(val);
-      //  console.log(val.target.value);
-
         if (!el.target.value || el.target.value.keyname === 0) {
             this.setState({data: this.state.data});
         } else {
@@ -37,9 +23,14 @@ class MoodSelectComponent extends Component {
         console.log(this.state.data);
     };
 
+    clearHappy = () => {
+        let stateDataCopy = this.state.data;
+        delete stateDataCopy.happy
+        this.setState({ data: stateDataCopy })
+        console.log(this.state.data);
+    };
+
     onChangeSad = (el) => {
-       // console.log(val);
-       // console.log(val.target.value);
         if (!el.target.value || el.target.value.keyname === 0) {
             this.setState({data: this.state.data});
         } else {
@@ -50,9 +41,14 @@ class MoodSelectComponent extends Component {
         console.log(this.state.data);
     };
 
+    clearSad = () => {
+        let stateDataCopy = this.state.data;
+        delete stateDataCopy.sad
+        this.setState({ data: stateDataCopy })
+        console.log(this.state.data);
+    };
+
     onChangeExcited = (el) => {
-        // console.log(val);
-        // console.log(val.target.value);
          if (!el.target.value || el.target.value.keyname === 0) {
              this.setState({data: this.state.data});
          } else {
@@ -60,12 +56,17 @@ class MoodSelectComponent extends Component {
              currentStepOneData.excited = el.target.value;
          this.setState({data: currentStepOneData});
          }
-        // console.log(this.state.data);
+        console.log(this.state.data);
      };
 
+     clearExcited = () => {
+        let stateDataCopy = this.state.data;
+        delete stateDataCopy.excited
+        this.setState({ data: stateDataCopy })
+        console.log(this.state.data);
+    };
+
      onChangeGoofy = (el) => {
-        // console.log(val);
-        // console.log(val.target.value);
          if (!el.target.value || el.target.value.keyname === 0) {
              this.setState({data: this.state.data});
          } else {
@@ -73,12 +74,17 @@ class MoodSelectComponent extends Component {
              currentStepOneData.goofy = el.target.value;
          this.setState({data: currentStepOneData});
          }
-        // console.log(this.state.data);
+        console.log(this.state.data);
      };
 
+     clearGoofy = () => {
+        let stateDataCopy = this.state.data;
+        delete stateDataCopy.goofy
+        this.setState({ data: stateDataCopy })
+        console.log(this.state.data);
+    };
+
      onChangeMotivated = (el) => {
-        // console.log(val);
-        // console.log(val.target.value);
          if (!el.target.value || el.target.value.keyname === 0) {
              this.setState({data: this.state.data});
          } else {
@@ -86,12 +92,17 @@ class MoodSelectComponent extends Component {
              currentStepOneData.motivated = el.target.value;
          this.setState({data: currentStepOneData});
          }
-        // console.log(this.state.data);
+        console.log(this.state.data);
      };
 
+     clearMotivated = () => {
+        let stateDataCopy = this.state.data;
+        delete stateDataCopy.motivated
+        this.setState({ data: stateDataCopy })
+        console.log(this.state.data);
+    };
+
      onChangeConfused = (el) => {
-        // console.log(val);
-        // console.log(val.target.value);
          if (!el.target.value || el.target.value.keyname === 0) {
              this.setState({data: this.state.data});
          } else {
@@ -99,13 +110,18 @@ class MoodSelectComponent extends Component {
              currentStepOneData.confused = el.target.value;
          this.setState({data: currentStepOneData});
          }
-        // console.log(this.state.data);
+        console.log(this.state.data);
      };
+
+     clearConfused = () => {
+        let stateDataCopy = this.state.data;
+        delete stateDataCopy.confused
+        this.setState({ data: stateDataCopy })
+        console.log(this.state.data);
+    };
 
      
      onChangeRelieved = (el) => {
-        // console.log(val);
-        // console.log(val.target.value);
          if (!el.target.value || el.target.value.keyname === 0) {
              this.setState({data: this.state.data});
          } else {
@@ -113,10 +129,15 @@ class MoodSelectComponent extends Component {
              currentStepOneData.relieved = el.target.value;
          this.setState({data: currentStepOneData});
          }
-        // console.log(this.state.data);
+        console.log(this.state.data);
      };
- 
- 
+
+     clearRelieved = () => {
+        let stateDataCopy = this.state.data;
+        delete stateDataCopy.relieved
+        this.setState({ data: stateDataCopy })
+        console.log(this.state.data);
+    };
 
     render() {
 
@@ -138,11 +159,11 @@ class MoodSelectComponent extends Component {
                             </Col>
                             <Col span={18}>
                                 <RadioGroup onChange={this.onChangeHappy}>
-                                    <Radio value={1} name="happy">1</Radio>
-                                    <Radio value={2} name="happy">2</Radio>
-                                    <Radio value={3} name="happy">3</Radio>
+                                    <Radio onClick={this.clearHappy} defaultChecked>N/A</Radio>
+                                    <Radio value={1} >1</Radio>
+                                    <Radio value={2} >2</Radio>
+                                    <Radio value={3} >3</Radio>
                                 </RadioGroup>
-                                <button>N/A</button>
                             </Col>
                         </Row>
                         </Col>
@@ -159,10 +180,10 @@ class MoodSelectComponent extends Component {
                             </Col>
                             <Col span={18}>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio value={0}>N/A</Radio>
-                                    <Radio value={1}>1</Radio>
-                                    <Radio value={2}>2</Radio>
-                                    <Radio value={3}>3</Radio>
+                                    <Radio onClick={this.clearSad} defaultChecked>N/A</Radio>
+                                    <Radio value={1} >1</Radio>
+                                    <Radio value={2} >2</Radio>
+                                    <Radio value={3} >3</Radio>
                                 </RadioGroup>
                             </Col>
                        </Row>
@@ -180,7 +201,7 @@ class MoodSelectComponent extends Component {
                             </Col>
                             <Col span={18}>
                                 <RadioGroup onChange={this.onChangeExcited}>
-                                    <Radio value={0}>N/A</Radio>
+                                    <Radio onClick={this.clearExcited} defaultChecked>N/A</Radio>
                                     <Radio value={1}>1</Radio>
                                     <Radio value={2}>2</Radio>
                                     <Radio value={3}>3</Radio>
@@ -201,7 +222,7 @@ class MoodSelectComponent extends Component {
                             </Col>
                             <Col span={18}>
                                 <RadioGroup onChange={this.onChangeGoofy}>
-                                    <Radio value={0}>N/A</Radio>
+                                    <Radio onClick={this.clearGoofy} defaultChecked>N/A</Radio>
                                     <Radio value={1}>1</Radio>
                                     <Radio value={2}>2</Radio>
                                     <Radio value={3}>3</Radio>
@@ -222,7 +243,7 @@ class MoodSelectComponent extends Component {
                             </Col>
                             <Col span={18}>
                                 <RadioGroup onChange={this.onChangeMotivated}>
-                                    <Radio value={0}>N/A</Radio>
+                                    <Radio onClick={this.clearMotivated} defaultChecked>N/A</Radio>
                                     <Radio value={1}>1</Radio>
                                     <Radio value={2}>2</Radio>
                                     <Radio value={3}>3</Radio>
@@ -243,7 +264,7 @@ class MoodSelectComponent extends Component {
                             </Col>
                             <Col span={18}>
                                 <RadioGroup onChange={this.onChangeConfused}>
-                                    <Radio value={0}>N/A</Radio>
+                                    <Radio onClick={this.clearConfused} defaultChecked>N/A</Radio>
                                     <Radio value={1}>1</Radio>
                                     <Radio value={2}>2</Radio>
                                     <Radio value={3}>3</Radio>
@@ -264,7 +285,7 @@ class MoodSelectComponent extends Component {
                             </Col>
                             <Col span={18}>
                                 <RadioGroup onChange={this.onChangeRelieved}>
-                                    <Radio value={0}>N/A</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
                                     <Radio value={1}>1</Radio>
                                     <Radio value={2}>2</Radio>
                                     <Radio value={3}>3</Radio>
@@ -285,7 +306,6 @@ class MoodSelectComponent extends Component {
                             </Col>
                             <Col span={18}>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio value={0}>N/A</Radio>
                                     <Radio value={1}>1</Radio>
                                     <Radio value={2}>2</Radio>
                                     <Radio value={3}>3</Radio>

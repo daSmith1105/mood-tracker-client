@@ -241,4 +241,21 @@
 .mood-log {
     padding-top: 4em;
     text-align: center;
+    padding-bottom: 4em;
+}
+
+.entry-wrapper {
+    list-style: none;
+}
+
+.entry-date {
+    text-align: left;
+}
+
+.mood-entry {
+    text-align: left;
+}
+
+.mood-note {
+    text-align: left;
 }
