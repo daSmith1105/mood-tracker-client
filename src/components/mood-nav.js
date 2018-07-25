@@ -76,9 +76,10 @@ currentDate = () => {
     }
 
   render() {
-
+//on completion this runs to grab the current state and piush to server to process then dump to db
     if (this.state.complete) {
-
+        //replace with moment.js 
+        // moment().format("dddd, MMMM Do YYYY, h:mm:ss a").toJSON()
       const createdOn = this.currentDate();
       const userMoods = this.state.stepResults.step1; 
       const userNote = this.state.stepResults.step2.note.toString();
@@ -97,7 +98,7 @@ currentDate = () => {
                 created: createdOn,
                 mood: moodArray,
                 note: userNote
-        }
+            }
         ];
 
         return fetch(`${API_BASE_URL}/moods`, {
