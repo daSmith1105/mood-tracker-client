@@ -1,5 +1,6 @@
 import React from 'react';
 import {API_BASE_URL} from '../config';
+import moment from 'moment';
 import './app.css';
 
 export class MoodLog extends React.Component {
@@ -9,45 +10,63 @@ export class MoodLog extends React.Component {
         this.state = {
             loading: false,
             error: null,
-            data: []
+            moodData: [],
         }
 
+        this.formatDate = this.formatDate.bind(this);
+        this.deleteEntry = this.deleteEntry.bind(this);
     }
 
     componentDidMount() {
-        this.loadEntries();
+        fetch(`${API_BASE_URL}/mood-entries`)
+        .then(data => data.json())
+        .then((data) => { this.setState({ moodData: data }) });
     }
 
+    formatDate = (date) => (moment(date).format("dddd, MMMM Do YYYY, h:mm:ss a"));
 
-    loadEntries() {
-        this.setState({
-            error: null,
-            loading: true
-        });
-        fetch(`${API_BASE_URL}/moods`)
-            .then(res => {
-                if (!res.ok) {
-                    return Promise.reject(res.statusText);
-                }
-                //return res.json()
-                //.then()
-                this.setState({
-                    data : res.json(),
-                    loading: false,
-                    error: null
+    deleteEntry = (_id) => {
+        fetch(`${API_BASE_URL}/mood-entries/${_id}`, { method: "DELETE" })
+        //.then(res => res.json())
+        .then(res => {
+            console.log('Deleted:', res.url)
+        })
+        .then(
+            window.location.reload()
+            /*
+            fetch(`${API_BASE_URL}/mood-entries`)
+                .then(data => data.json())
+                .then((data) => { 
+                    this.setState({ moodData: data }) 
+                    console.log(this.state.moodData)
                 })
-            })
-            .catch(err =>
-                this.setState({
-                    error: 'Could not load entries',
-                    loading: false
-                })
-            );
+                */
+            )
+            .catch(err => console.error(err))
     }
+
     
+
+
 
 render() { 
-    
+
+    const array = this.state.moodData.entries;
+    console.log("Current Entries: ", array);
+
+    const map = Object.keys(array).map((i) => {
+        console.log((array[i]._id));
+        return  (
+
+            <li key={array[i]._id} className="line-entry">
+                {this.formatDate(array[i].created)}
+                <br /><br />
+                <br />
+                {array[i].note}
+                <button className="delete-entry" onClick={ () => (this.deleteEntry( (array[i]._id))) }>Delete</button>
+            </li>
+        )})
+
     let body;
         if (this.state.error) {
             body = (
@@ -59,18 +78,17 @@ render() {
             );
         } else {
            body = (
-            <div>
-                <p>Success</p>
-                <div>{this.state.data.Promise}</div>
-            </div>
+               <ul>
+                {map}
+               </ul>
             )
         }
 
         return (
             <div className="mood-log">
-                {body}
+                    {body}
             </div>
-        );
+        )
     }
 }
 

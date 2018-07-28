@@ -229,6 +229,7 @@
 /* mood conrimation styling */
 
 .mood-confirm {
+    width: 90%;
     max-width: 600px;
     text-align: left;
     margin-left: auto;
@@ -242,20 +243,31 @@
     padding-top: 4em;
     text-align: center;
     padding-bottom: 4em;
+    font-size: 100%;
 }
 
-.entry-wrapper {
+.mood-log li {
     list-style: none;
+    text-align: left;
+    width: 90%;
 }
 
-.entry-date {
-    text-align: left;
+.line-entry {
+    position: relative;
+    border-bottom: 2px solid grey;
+    margin-top: 1em;
+    padding: 1em;
 }
 
-.mood-entry {
-    text-align: left;
-}
-
-.mood-note {
-    text-align: left;
+.delete-entry {
+    position: absolute;
+    top: 0;
+    right: 2em;
+    width: 6em;
+    height: auto;
+    font-size: 120%;
+    border-radius: .5em;
+    background: radial-gradient(circle, rgb(252, 172, 172), rgb(241, 70, 70), red);
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+    border: none;
 }

@@ -10,6 +10,7 @@
         "history": "^4.7.2",
         "jwt-decode": "^2.2.0",
         "lodash": "^4.17.10",
+        "moment": "^2.22.2",
         "react": "^16.4.1",
         "react-dom": "^16.4.1",
         "react-history": "^0.18.2",
