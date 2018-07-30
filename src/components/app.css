@@ -1,18 +1,7 @@
 .App {
     width: 100vw;
+    height: 100%;
     font-size: 16px;
-}
-
-.border-red {
-    border: 2px solid red;
-    padding: .5em;
-    margin: 1em;
-}
-
-.border-green {
-    border: 2px solid green;
-    padding: .5em;
-    margin: 1em;
 }
 
 
@@ -23,28 +12,41 @@
     position: fixed;
     padding: .5em;
     height: 3em;
-    background-color: goldenrod;
+    background-color: rgb(4, 156, 131);
     width: 100vw;
     z-index: 1;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.2);
 }
 
 .home-link {
     position: absolute;
-    top: .5em;
+    top: 1em;
     left: .5em;
+    font-size: 80%;
+}
+
+.info-link {
+    position: absolute;
+    top: .5em;
+    left: 1em;
+    height: 100%;
 }
 
 .app-title {
     font-size: 60%;
+    color: lightgoldenrodyellow;
 }
 
 .logout-link {
     position: absolute;
-    top: .5em;
+    top: .7em;
     right: .5em;
+    font-size: 80%;
+    color: white;
 }
 
 .home-link a,
+.info-link a,
 .logout-link a {
     color: white;
 }
@@ -59,13 +61,26 @@
     padding: .5em;
     height: 3em;
     width: 100vw;
-    text-align: left;
-    background-color: goldenrod;
+    background-color: rgb(4, 156, 131);
     z-index: 1;
+    border-top: 4px solid rgba(0, 0, 0, 0.2);
 }
 
 .footer a {
     color: white;
+}
+
+.moodlog-link {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    font-size: 80%;
+}
+
+.footer-info-link {
+    position: absolute;
+    bottom: .7em;
+    right: 1em;
 }
 
 
@@ -74,52 +89,54 @@
 .landing-page {
     padding: .5em;
     text-align: center;
-    padding-top: 4em;
+    padding-top: 10vh;
+    height: 100%;
 }
 
 .landing-welcome {
-    font-size: 150%;
+    font-size: 7vw;
     margin-bottom: 0;
 }
 
 .landing-tagline {
-    font-size: 120%;
+    font-size: 6vw;
     margin-top: 0;
 }
 
 .landing-description {
-    font-size: 80%;
+    font-size: 4vw;
     font-style: italic;
 }
 
 .landing-purpose {
-    font-size: 90%;
+    font-size: 5vw;
 }
 
 .landing-bullets {
-    font-size: 70%;
-    width: 80%;
-    max-width: 240px;
+    font-size: 3.5vw;
+    width: 90%;
+    max-width: 600px;
     margin: auto;
     text-align: left;
 }
 
 .landing-action-call {
-    font-size: 160%;
+    font-size: 8vw;
     margin-bottom: 0;
+    margin-top: 4vh;
 }
 
 .landing-links {
-    font-size: 160%;
-    margin-top: .5em;
+    font-size: 7vw;
+    margin-top: 3vh;
 }
 
 .landing-link-login {
-    margin-right: 1em;
+    margin-right: 4vw;
 }
 
 .landing-link-signup {
-    margin-left: 1em;
+    margin-left: 4vw;
 }
 
 
@@ -141,42 +158,105 @@
 
 .dashboard {
     text-align: center;
-    padding-top: 4em;
+    padding-top: 10vh;
 }
 
 .dashboard-greeting {
-    margin-top: 2em;
+    margin-top: 4vh;
 }
 
 .dashboard-greeting h1 {
-    font-size: 220%;
+    font-size: 12vw;
+    color: white;
 }
 
 .dashboard-greeting h2 {
-    font-size: 180%;
+    font-size: 7vw;
+    color: white;
 }
 
-.dashboard-circle-container {
-    background-color: green;
-    border: 2px solid green;
-    border-radius: 50%;
-    height: 200px;
-    width: 200px;
+.circle-container {
+    height: 60vw;
+    width: 60vw;
     margin: auto;
+    margin-top: 10vh;
 }
 
-.dashboard-question {
-    padding: .5em;
+.circle {
+    background-color: rgb(4, 156, 131);
+    border: 4px solid rgb(4, 141, 118);
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
 .dashboard-question-text {
-    font-size: 110%;
-    margin-top: 4.75em;
+    font-size: 7vw;
+    margin-top: 5vw;
+    color: lightgoldenrodyellow;
 }
 
-.link-white {
-    color: white;
-    text-decoration: none;
+
+/* mood nav styling */
+
+.mood-nav {
+    text-align: center;
+}
+
+.fixed {
+    position: fixed;
+    padding: 8vw;
+}
+
+
+/* mood select styling */
+
+.mood-select-container {
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+    padding-bottom: 3em;
+}
+
+.sticky {
+    position: sticky; 
+    top: 3em;
+}
+
+.mood-select-container hr {
+    color: black;
+    margin-bottom: 2vh;
+    margin-top: -2vh;
+}
+
+.mood-choice-container input {
+    font-weight: bold;
+}
+
+.mood-choice-container {
+    display: flex;
+    text-align: center;
+}
+
+.mood-choice-container:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.mood-img {
+    height: 10vw;
+    width: 10vw;
+}
+
+.mood-text {
+    font-size: 6vw;
+    font-weight: bold;
+}
+
+.intensity-label {
+    font-size: 5vw;
+    font-weight: bold;
+    margin-top: -2vw;
 }
 
 
@@ -189,6 +269,7 @@
     border-radius: .5em;
     min-height: 40vh;
     height: auto;
+    box-shadow: 1px 2px 2px 2px rgba(0,0,0,.4);
 }
 
 .mood-recap {
@@ -215,18 +296,21 @@
 
 /* confirmation styling */
 
-.note-confirm {
-    height: auto;
-    min-height: 40vh;
-    border: 1px solid grey;
-    border-radius: .5em;
-    width: 100%;
+.user-note-confirm {
+    width: 90%;
+    max-width: 600px;
     padding: .5em;
-    word-wrap: break-word
+    border-radius: .5em;
+    min-height: 40vh;
+    height: auto;
+    word-wrap: break-word;
+    background-color: white;
+    box-shadow: 1px 2px 2px 2px rgba(0,0,0,.4);
+    text-align: left;
 }
 
 
-/* mood conrimation styling */
+/* mood confirmation styling */
 
 .mood-confirm {
     width: 90%;
@@ -240,34 +324,84 @@
 /* mood log styling */
 
 .mood-log {
-    padding-top: 4em;
-    text-align: center;
-    padding-bottom: 4em;
-    font-size: 100%;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    font-size: 3.75vw;
+   
 }
 
 .mood-log li {
     list-style: none;
     text-align: left;
-    width: 90%;
+    width: 95%;
+  
+}
+
+.mood-log li:hover {
+    background-color: rgba(0,0,0,.4);
+  
 }
 
 .line-entry {
     position: relative;
     border-bottom: 2px solid grey;
-    margin-top: 1em;
-    padding: 1em;
+    margin-top: 1vh;
+    padding: 1vw;
+
 }
 
 .delete-entry {
     position: absolute;
     top: 0;
-    right: 2em;
-    width: 6em;
+    right: 1em;
+    width: 9vw;
     height: auto;
-    font-size: 120%;
+    padding: .5em;
+    font-size: 4vw;
     border-radius: .5em;
     background: radial-gradient(circle, rgb(252, 172, 172), rgb(241, 70, 70), red);
     box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
     border: none;
+}
+
+
+/* delete modal */
+
+.delete-modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    overflow-y: hidden;
+}
+
+.modal-container {
+    margin: auto;
+    margin-top: 25vh;
+    width: 70vw;
+    height: 60vw;
+    background-color: white;
+    border-radius: .5em;
+    padding: 5%;
+    box-shadow: 2px 4px 4px 6px rgba(0, 0, 0, .5);
+}
+
+.modal-container h1 {
+    font-size: 4.5vw;
+}
+
+.modal-container button {
+    margin-top: 10vh;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    width: 12vw;
+    padding: .5em;
+    font-size: 3vw;
+    border: none;
+    border-radius: .5em;
+    background-color: goldenrod;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .5);
 }

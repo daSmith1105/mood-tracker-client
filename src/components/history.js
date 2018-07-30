@@ -1,9 +1,3 @@
-import { createBrowserHistory } from 'history';
+import createHistory from 'history/createBrowserHistory'
 
-export function history(props) {
-
-    const history = createBrowserHistory();
-
-}
-
-export default history;
+export default createHistory()

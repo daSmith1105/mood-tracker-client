@@ -3,28 +3,30 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
+import { Icon } from 'antd';
+import history from './history';
 import './app.css';
+import './antd.css';
 
 export class HeaderBar extends React.Component {
 
     logOut() {
         this.props.dispatch(clearAuth());
         clearAuthToken();
+        history.push('/login');
     }
 
     render() {
-        // Only render the log out button if we are logged in
-        let logOutButton;
-
-        if (this.props.loggedIn) {
-            logOutButton = (
-                <button onClick={() => this.logOut()}>Log out</button>
-            );
-        }
-
+       
         const HomeLink = (props) => (
             <div className="home-link">
-                <Link to="/">Home</Link>
+                <Link to="/dashboard">Dashboard</Link>
+            </div>
+        )
+
+        const InfoLink = (props) => (
+            <div className="info-link">
+                <Link to="/"><Icon type="info-circle-o" className="info-icon" /></Link>
             </div>
         )
     
@@ -36,15 +38,15 @@ export class HeaderBar extends React.Component {
     
         const LogoutLink = (props) => (
             <div className="logout-link">
-                {logOutButton}
+                <button onClick={() => this.logOut()}>Log out</button>
             </div>
         )
 
     return (
         <div className="header">
-            <HomeLink/>
+            {this.props.loggedIn ? <HomeLink /> : <InfoLink />}
             <AppTitle />
-            <LogoutLink />
+            {this.props.loggedIn ? <LogoutLink /> : null}
         </div>
     )
 }

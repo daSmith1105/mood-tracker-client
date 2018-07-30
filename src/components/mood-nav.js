@@ -1,24 +1,41 @@
 import React, { Component } from 'react';
 import MoodSelectComponent from './mood-select-component';
+import {withRouter} from 'react-router-dom';
 import NoteComponent from './note-component';
+import history from './history'
 import MoodConfirmComponent from './mood-confirm-component';
 import { Tabs, Row, Col, Badge} from 'antd';
 import {API_BASE_URL} from '../config';
 import './antd.css';
+import './app.css';
 import './spacing.css';
 
 const TabPane = Tabs.TabPane;
 
-export default class MoodNav extends Component {
+export class MoodNav extends Component {
     constructor(props){
         super(props);
         this.state = {
             currentStep: '1',
             stepResults: {},
             complete: false,
-            redirect: false
+            redirect: false,
+            user: ''
         }
+
     }
+
+    componentDidMount() {
+        if(!this.props.location.state) {
+            history.push('/login') 
+            console.log('bombed out')
+        } else {
+            this.setState({
+                user: this.props.location.state.userId
+        })
+        console.log(this.props.location.state.userId);
+    }
+}
 
   step2 = (val) => {
       let currentStepResults = this.state.stepResults;
@@ -52,7 +69,7 @@ incomplete = () => {
 
 
 tabHeader = (num, txt) => {
-    return <span>
+    return <span >
                       <Badge count={num} style={{ backgroundColor: '#fff', color: '#999', boxShadow: '0 0 0 1px #d9d9d9 inset' }} />
         &nbsp;{txt}
                   </span>
@@ -60,44 +77,40 @@ tabHeader = (num, txt) => {
 
 
 createEntry = () => {
-
+        const currentUser = this.props.location.state.userId;
+        //console.log(currentUser);
         const userMoods = this.state.stepResults.step1; 
-        const userNote = this.state.stepResults.step2.note.toString();
-         
-          let moodArray = [];
+        const userNote = this.state.stepResults.step2.note;
+        let moodArray = [];
     
-              moodArray = Object.keys(userMoods).map((keyName) => {
-                  return (
-                          {
-                              moodType: keyName,
-                              intensity: userMoods[keyName]
-                          })
-              });
+            moodArray = Object.keys(userMoods).map((keyName) => {
+                return (
+                        { moodType: keyName, intensity: userMoods[keyName]}
+                    )
+            });
     
-          const data = [
-              {
-                  moods: moodArray,
-                  note: userNote
-              }
-              
-          ];
-    
-          console.log('New Entry:', data);
+            const data = [{  user: currentUser, moods: moodArray, note: userNote }];
 
-    fetch(`${API_BASE_URL}/mood-entries`, { 
-          method: "POST",
-          headers: {
-              'Accept': 'application/json',
-              "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data)
-      })
-          .then(function(response) { 
-          console.log(response);
-      }),
-          function(error) {
-          console.log(error);
-      }
+            console.log('New Entry:', data);
+
+        fetch(`${API_BASE_URL}/mood-entries`, { 
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+            .then(function(response) { 
+                history.push({
+                    pathname: './mood-log',
+                    state: {userId: currentUser} 
+              })
+        }) 
+        .catch (
+            function(error) {
+            console.log(error);
+        })
     }
 
 
@@ -105,13 +118,13 @@ createEntry = () => {
   render() { 
 
     return (
-        <div className="tab-nav" style={{textAlign: 'center'}}>
+        <div className="tab-nav mood-nav">
             <Row type={'flex'} align={'center'} className={'m-t-l'} style={{width: '100vw', paddingTop: '4em'}}>
               <Col span={24}>
 
                   <Tabs activeKey={this.state.currentStep}>
 
-                      <TabPane tab={this.tabHeader(1, 'Select Mood')} key="1" disabled={this.state.currentStep!=='1'}>
+                      <TabPane  tab={this.tabHeader(1, 'Select Mood')} key="1" disabled={this.state.currentStep!=='1'}>
 
                           <MoodSelectComponent onNextClick={this.step2} onPrevClick={this.toDashboard}/>
 
@@ -135,3 +148,6 @@ createEntry = () => {
       )
     }
 }
+
+
+export default withRouter(MoodNav); 

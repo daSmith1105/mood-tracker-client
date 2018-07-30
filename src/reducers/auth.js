@@ -13,7 +13,6 @@ const initialState = {
     error: null,
     info: true
 };
-
 export default function reducer(state = initialState, action) {
     if (action.type === SET_AUTH_TOKEN) {
         return Object.assign({}, state, {

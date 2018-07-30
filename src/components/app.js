@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Route, BrowserRouter as Router, withRouter} from 'react-router-dom';
-
+import {Route, Router, withRouter} from 'react-router-dom';
+import history from './history';
 import HeaderBar from './header-bar';
 import FooterBar from './footer-bar';
 import LandingPage from './landing-page';
@@ -47,7 +47,7 @@ export class App extends React.Component {
   render() {
     return (
             <div className="App">
-              <Router>
+              <Router history={history}>
                 <div>
                     <HeaderBar />
                     <FooterBar />
@@ -71,5 +71,4 @@ const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null
 });
 
-// Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking
 export default withRouter(connect(mapStateToProps)(App)); 

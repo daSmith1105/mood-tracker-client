@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Radio, Divider, Button } from 'antd';
+import { Row, Col, Radio, Button } from 'antd';
 import {Link} from 'react-router-dom';
 const RadioGroup = Radio.Group;
 
@@ -142,22 +142,25 @@ class MoodSelectComponent extends Component {
     render() {
 
         return (
-            <div style={{textAlign: 'center', maxWidth: '600px', margin: 'auto'}}>
+            <div className="mood-select-container">
                 <Row type={'flex'} align={'center'} className={'p-lg'}>
-                    <Col style={{ position: 'fixed', top: '9em'}}>
+                    <Col style={{ marginTop: '-2em'}}>
                         <Link to='/dashboard'><Button type={'primary'} ghost>Back</Button></Link>
                         &nbsp;
                         <Button type={'primary'} onClick={() => {this.props.onNextClick(this.state.data)}}>Next</Button>
                     </Col>
                 </Row>
+                
                 <Row type={'flex'} align={'center'} className={'p-md'}>
-                    <Col span={24}>
+
+                    <Col span={24} className="mood-choice-container"> 
                         <Row type={'flex'} align={'center'}>
                             <Col span={6}>
-                                <img src={require("../resources/happy.png")} alt="happy" style={{height: '26px', width: '26px'}}/>
-                                <p>Happy</p>
+                                <img src={require("../resources/happy.png")} alt="happy" className="mood-img"/>
+                                <p className="mood-text">Happy</p>
                             </Col>
                             <Col span={18}>
+                                <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeHappy}>
                                     <Radio onClick={this.clearHappy} defaultChecked>N/A</Radio>
                                     <Radio value={1} >1</Radio>
@@ -166,19 +169,20 @@ class MoodSelectComponent extends Component {
                                 </RadioGroup>
                             </Col>
                         </Row>
-                        </Col>
-
-                    <Col span={24}>
-                        <Divider />
                     </Col>
 
                     <Col span={24}>
+                        <hr />
+                    </Col>
+
+                    <Col span={24} className="mood-choice-container">
                         <Row type={'flex'} align={'center'}>
                             <Col span={6}>
-                            <img src={require("../resources/sad.png")} alt="sad" style={{height: '26px', width: '26px'}}/>
-                                <p>Sad</p>
+                            <img src={require("../resources/sad.png")} alt="sad" className="mood-img"/>
+                                <p className="mood-text">Sad</p>
                             </Col>
                             <Col span={18}>
+                                <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
                                     <Radio onClick={this.clearSad} defaultChecked>N/A</Radio>
                                     <Radio value={1} >1</Radio>
@@ -190,16 +194,17 @@ class MoodSelectComponent extends Component {
                     </Col>
 
                     <Col span={24}>
-                        <Divider />
+                        <hr />
                     </Col>
 
-                    <Col span={24}>
+                    <Col span={24} className="mood-choice-container">
                         <Row type={'flex'} align={'center'}>
                             <Col span={6}>
-                            <img src={require("../resources/excited.png")} alt="excited" style={{height: '26px', width: '26px'}}/>
-                                <p>Excited</p>
+                            <img src={require("../resources/excited.png")} alt="excited" className="mood-img"/>
+                                <p className="mood-text">Excited</p>
                             </Col>
                             <Col span={18}>
+                                <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeExcited}>
                                     <Radio onClick={this.clearExcited} defaultChecked>N/A</Radio>
                                     <Radio value={1}>1</Radio>
@@ -211,16 +216,17 @@ class MoodSelectComponent extends Component {
                     </Col>
 
                     <Col span={24}>
-                        <Divider />
+                        <hr />
                     </Col>
 
-                    <Col span={24}>
+                    <Col span={24} className="mood-choice-container">
                         <Row type={'flex'} align={'center'}>
                             <Col span={6}>
-                            <img src={require("../resources/goofy.png")} alt="goofy" style={{height: '26px', width: '26px'}}/>
-                                <p>Goofy</p>
+                            <img src={require("../resources/goofy.png")} alt="goofy" className="mood-img"/>
+                                <p className="mood-text">Goofy</p>
                             </Col>
                             <Col span={18}>
+                                <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeGoofy}>
                                     <Radio onClick={this.clearGoofy} defaultChecked>N/A</Radio>
                                     <Radio value={1}>1</Radio>
@@ -232,16 +238,17 @@ class MoodSelectComponent extends Component {
                     </Col>
 
                     <Col span={24}>
-                        <Divider />
+                        <hr />
                     </Col>
 
-                    <Col span={24}>
+                    <Col span={24} className="mood-choice-container">
                         <Row type={'flex'} align={'center'}>
                             <Col span={6}>
-                            <img src={require("../resources/motivated.png")} alt="motivated" style={{height: '26px', width: '26px'}}/>
-                                <p>Motivated</p>
+                            <img src={require("../resources/motivated.png")} alt="motivated" className="mood-img"/>
+                                <p className="mood-text">Motivated</p>
                             </Col>
                             <Col span={18}>
+                                <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeMotivated}>
                                     <Radio onClick={this.clearMotivated} defaultChecked>N/A</Radio>
                                     <Radio value={1}>1</Radio>
@@ -253,16 +260,17 @@ class MoodSelectComponent extends Component {
                     </Col>
 
                     <Col span={24}>
-                        <Divider />
+                        <hr />
                     </Col>
 
-                    <Col span={24}>
+                    <Col span={24} className="mood-choice-container">
                         <Row type={'flex'} align={'center'}>
                             <Col span={6}>
-                            <img src={require("../resources/confused.png")} alt="confused" style={{height: '26px', width: '26px'}}/>
-                                <p>Confused</p>
+                            <img src={require("../resources/confused.png")} alt="confused" className="mood-img"/>
+                                <p className="mood-text">Confused</p>
                             </Col>
                             <Col span={18}>
+                                <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeConfused}>
                                     <Radio onClick={this.clearConfused} defaultChecked>N/A</Radio>
                                     <Radio value={1}>1</Radio>
@@ -274,16 +282,17 @@ class MoodSelectComponent extends Component {
                     </Col>
 
                     <Col span={24}>
-                        <Divider />
+                        <hr />
                     </Col>
 
-                    <Col span={24}>
+                    <Col span={24} className="mood-choice-container">
                         <Row type={'flex'} align={'center'}>
                             <Col span={6}>
-                            <img src={require("../resources/relieved.png")} alt="relieved" style={{height: '26px', width: '26px'}}/>
-                                <p>Relieved</p>
+                            <img src={require("../resources/relieved.png")} alt="relieved" className="mood-img"/>
+                                <p className="mood-text">Relieved</p>
                             </Col>
                             <Col span={18}>
+                                <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeRelieved}>
                                     <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
                                     <Radio value={1}>1</Radio>
@@ -295,17 +304,19 @@ class MoodSelectComponent extends Component {
                     </Col>
 
                     <Col span={24}>
-                        <Divider />
+                        <hr />
                     </Col>
 
-                    <Col span={24}>
+                    <Col span={24} className="mood-choice-container">
                         <Row type={'flex'} align={'center'}>
                             <Col span={6}>
-                            <img src={require("../resources/content.png")} alt="content" style={{height: '26px', width: '26px'}}/>
-                                <p>Content</p>
+                            <img src={require("../resources/content.png")} alt="content" className="mood-img"/>
+                                <p className="mood-text">Content</p>
                             </Col>
                             <Col span={18}>
+                                <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
                                     <Radio value={1}>1</Radio>
                                     <Radio value={2}>2</Radio>
                                     <Radio value={3}>3</Radio>
@@ -315,18 +326,19 @@ class MoodSelectComponent extends Component {
                     </Col>
 
                     <Col span={24}>
-                        <Divider />
+                        <hr />
                     </Col>
 
-                    <Col span={24}>
+                    <Col span={24} className="mood-choice-container">
                         <Row type={'flex'} align={'center'}>
                             <Col span={6}>
-                            <img src={require("../resources/hopeful.png")} alt="hopeful" style={{height: '26px', width: '26px'}}/>
-                                <p>Hopeful</p>
+                            <img src={require("../resources/hopeful.png")} alt="hopeful" className="mood-img"/>
+                                <p className="mood-text">Hopeful</p>
                             </Col>
                             <Col span={18}>
+                                <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio value={0}>N/A</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
                                     <Radio value={1}>1</Radio>
                                     <Radio value={2}>2</Radio>
                                     <Radio value={3}>3</Radio>
@@ -336,18 +348,19 @@ class MoodSelectComponent extends Component {
                     </Col>
 
                     <Col span={24}>
-                        <Divider />
+                        <hr />
                     </Col>
 
                     <Col span={24}>
                         <Row type={'flex'} align={'center'}>
                             <Col span={6}>
-                            <img src={require("../resources/anxious.png")} alt="anxious" style={{height: '26px', width: '26px'}}/>
-                                <p>Anxious</p>
+                            <img src={require("../resources/anxious.png")} alt="anxious" className="mood-img"/>
+                                <p className="mood-text">Anxious</p>
                             </Col>
                             <Col span={18}>
+                                <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio value={0}>N/A</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
                                     <Radio value={1}>1</Radio>
                                     <Radio value={2}>2</Radio>
                                     <Radio value={3}>3</Radio>
@@ -357,18 +370,19 @@ class MoodSelectComponent extends Component {
                     </Col>
                     
                     <Col span={24}>
-                        <Divider />
+                        <hr />
                     </Col>
 
-                    <Col span={24}>
+                    <Col span={24} className="mood-choice-container">
                         <Row type={'flex'} align={'center'}>
                             <Col span={6}>
-                            <img src={require("../resources/blah.png")} alt="blah" style={{height: '26px', width: '26px'}}/>
-                                <p>Blah</p>
+                            <img src={require("../resources/blah.png")} alt="blah" className="mood-img"/>
+                                <p className="mood-text">Blah</p>
                             </Col>
                             <Col span={18}>
+                                <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio value={0}>N/A</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
                                     <Radio value={1}>1</Radio>
                                     <Radio value={2}>2</Radio>
                                     <Radio value={3}>3</Radio>
@@ -378,18 +392,19 @@ class MoodSelectComponent extends Component {
                     </Col>
                    
                     <Col span={24}>
-                        <Divider />
+                        <hr />
                     </Col>
 
-                    <Col span={24}>
+                    <Col span={24} className="mood-choice-container">
                         <Row type={'flex'} align={'center'}>
                             <Col span={6}>
-                            <img src={require("../resources/scared.png")} alt="scared" style={{height: '26px', width: '26px'}}/>
-                                <p>Scared</p>
+                            <img src={require("../resources/scared.png")} alt="scared" className="mood-img"/>
+                                <p className="mood-text">Scared</p>
                             </Col>
                             <Col span={18}>
+                                <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio value={0}>N/A</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
                                     <Radio value={1}>1</Radio>
                                     <Radio value={2}>2</Radio>
                                     <Radio value={3}>3</Radio>
@@ -399,18 +414,19 @@ class MoodSelectComponent extends Component {
                     </Col>
                     
                     <Col span={24}>
-                        <Divider />
+                        <hr />
                     </Col>
 
-                    <Col span={24}>
+                    <Col span={24} className="mood-choice-container">
                         <Row type={'flex'} align={'center'}>
                             <Col span={6}>
-                            <img src={require("../resources/tired.png")} alt="tired" style={{height: '26px', width: '26px'}}/>
-                                <p>Tired</p>
+                            <img src={require("../resources/tired.png")} alt="tired" className="mood-img"/>
+                                <p className="mood-text">Tired</p>
                             </Col>
                             <Col span={18}>
+                                <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio value={0}>N/A</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
                                     <Radio value={1}>1</Radio>
                                     <Radio value={2}>2</Radio>
                                     <Radio value={3}>3</Radio>
@@ -420,18 +436,19 @@ class MoodSelectComponent extends Component {
                     </Col>
                     
                     <Col span={24}>
-                        <Divider />
+                        <hr />
                     </Col>
 
-                    <Col span={24}>
+                    <Col span={24} className="mood-choice-container">
                         <Row type={'flex'} align={'center'}>
                             <Col span={6}>
-                            <img src={require("../resources/lonely.png")} alt="lonely" style={{height: '26px', width: '26px'}}/>
-                                <p>Lonely</p>
+                            <img src={require("../resources/lonely.png")} alt="lonely" className="mood-img"/>
+                                <p className="mood-text">Lonely</p>
                             </Col>
                             <Col span={18}>
+                                <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio value={0}>N/A</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
                                     <Radio value={1}>1</Radio>
                                     <Radio value={2}>2</Radio>
                                     <Radio value={3}>3</Radio>
@@ -441,18 +458,19 @@ class MoodSelectComponent extends Component {
                     </Col>
                    
                     <Col span={24}>
-                        <Divider />
+                        <hr />
                     </Col>
 
-                    <Col span={24}>
+                    <Col span={24} className="mood-choice-container">
                         <Row type={'flex'} align={'center'}>
                             <Col span={6}>
-                            <img src={require("../resources/hurt.png")} alt="hurt" style={{height: '26px', width: '26px'}}/>
-                                <p>Hurt</p>
+                            <img src={require("../resources/hurt.png")} alt="hurt" className="mood-img"/>
+                                <p className="mood-text">Hurt</p>
                             </Col>
                             <Col span={18}>
+                                <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio value={0}>N/A</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
                                     <Radio value={1}>1</Radio>
                                     <Radio value={2}>2</Radio>
                                     <Radio value={3}>3</Radio>
@@ -462,18 +480,19 @@ class MoodSelectComponent extends Component {
                     </Col>
                     
                     <Col span={24}>
-                        <Divider />
+                        <hr />
                     </Col>
 
-                    <Col span={24}>
+                    <Col span={24} className="mood-choice-container">
                         <Row type={'flex'} align={'center'}>
                             <Col span={6}>
-                            <img src={require("../resources/irritated.png")} alt="irritated" style={{height: '26px', width: '26px'}}/>
-                                <p>Irritated</p>
+                            <img src={require("../resources/irritated.png")} alt="irritated" className="mood-img"/>
+                                <p className="mood-text">Irritated</p>
                             </Col>
                             <Col span={18}>
+                                <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio value={0}>N/A</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
                                     <Radio value={1}>1</Radio>
                                     <Radio value={2}>2</Radio>
                                     <Radio value={3}>3</Radio>
@@ -483,18 +502,19 @@ class MoodSelectComponent extends Component {
                     </Col>
                     
                     <Col span={24}>
-                        <Divider />
+                        <hr />
                     </Col>
 
-                    <Col span={24}>
+                    <Col span={24} className="mood-choice-container">
                         <Row type={'flex'} align={'center'}>
                             <Col span={6}>
-                            <img src={require("../resources/angry.png")} alt="happy" style={{height: '26px', width: '26px'}}/>
-                                <p>Angry</p>
+                            <img src={require("../resources/angry.png")} alt="angry" className="mood-img"/>
+                                <p className="mood-text">Angry</p>
                             </Col>
                             <Col span={18}>
+                                <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio value={0}>N/A</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
                                     <Radio value={1}>1</Radio>
                                     <Radio value={2}>2</Radio>
                                     <Radio value={3}>3</Radio>
@@ -504,7 +524,7 @@ class MoodSelectComponent extends Component {
                     </Col>
 
                     <Col span={24}>
-                        <Divider />
+                        <hr />
                     </Col>
 
                 </Row>
