@@ -27,7 +27,7 @@ export function SignUpPage(props) {
         <div className="signup" style={{textAlign: 'center', maxWidth: '500px', margin: 'auto'}}>
             <h1>Signup</h1>
             <SignupForm />
-            <LoginLink/>
+            <LoginLink />
         </div>
     );
 }

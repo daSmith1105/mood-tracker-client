@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MoodSelectComponent from './mood-select-component';
-import {withRouter} from 'react-router-dom';
+import {connect} from 'react-redux';
 import NoteComponent from './note-component';
 import history from './history'
 import MoodConfirmComponent from './mood-confirm-component';
@@ -20,22 +20,17 @@ export class MoodNav extends Component {
             stepResults: {},
             complete: false,
             redirect: false,
-            user: ''
         }
 
     }
 
     componentDidMount() {
-        if(!this.props.location.state) {
-            history.push('/login') 
-            console.log('bombed out')
-        } else {
-            this.setState({
-                user: this.props.location.state.userId
-        })
-        console.log(this.props.location.state.userId);
+
+            if(!this.props.location.state) {
+                history.push('/login') 
+                console.log('Forbidden: Login Required')
+            } 
     }
-}
 
   step2 = (val) => {
       let currentStepResults = this.state.stepResults;
@@ -77,8 +72,6 @@ tabHeader = (num, txt) => {
 
 
 createEntry = () => {
-        const currentUser = this.props.location.state.userId;
-        //console.log(currentUser);
         const userMoods = this.state.stepResults.step1; 
         const userNote = this.state.stepResults.step2.note;
         let moodArray = [];
@@ -89,7 +82,7 @@ createEntry = () => {
                     )
             });
     
-            const data = [{  user: currentUser, moods: moodArray, note: userNote }];
+            const data = [{  user: this.props.userId, moods: moodArray, note: userNote }];
 
             console.log('New Entry:', data);
 
@@ -102,11 +95,8 @@ createEntry = () => {
             body: JSON.stringify(data)
         })
             .then(function(response) { 
-                history.push({
-                    pathname: './mood-log',
-                    state: {userId: currentUser} 
+                history.push('./mood-log')
               })
-        }) 
         .catch (
             function(error) {
             console.log(error);
@@ -149,5 +139,12 @@ createEntry = () => {
     }
 }
 
+const mapStateToProps = state => {
+    const {currentUser} = state.auth;
+    return {
+        loggedIn: state.auth.currentUser !== null,
+        userId: `${currentUser.id}`
+    };
+};
 
-export default withRouter(MoodNav); 
+export default connect(mapStateToProps)(MoodNav);

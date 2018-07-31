@@ -12,7 +12,6 @@ export class MoodLog extends React.Component {
         this.state = {
             loading: false,
             error: null,
-            moodData: [],
             delete: false,
             deleteId: null
         }
@@ -21,24 +20,26 @@ export class MoodLog extends React.Component {
         this.formatDate = this.formatDate.bind(this);
         this.deleteEntry = this.deleteEntry.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+
         this.state.refresh && this.getData()
     }
 
-        componentDidMount() {
+    componentDidMount() {
 
-            if(!this.props.loggedIn) {
-                history.push('/login') 
-                console.log('Forbidden: Login Required')
-            } else {
-                this.getData()
-                }
-            }   
+        if(!this.props.loggedIn) {
+             history.push('/login') 
+             console.log('Forbidden: Login Required')
+        } else {
+            this.getData()
+            }
+    }   
     
 
     getData = () => {
-        fetch(`${API_BASE_URL}/mood-entries/${this.props.user}`)
+        fetch(`${API_BASE_URL}/mood-entries/` + this.props.userId)
         .then(data => data.json())
         .then((data) => { 
+            console.log(data)
             this.setState({ 
                 moodData: data,
             }) 
@@ -68,30 +69,35 @@ export class MoodLog extends React.Component {
             .catch(err => console.error(err))
     }
 
+    mappedEntries = () => {
+        console.log(this.state.moodData);
+        let entries = this.state.moodData.entries;
+        return entries.map( entry => {
+            console.log(entry.moods);
+            return <div key={entry._id} className="entry">
+
+                        <span>{this.formatDate(entry.created)}</span>
+                        <br />
+                        <span>{
+                                entry.moods.map( mood => {
+                                    return (
+                                        <div key={mood._id}>
+                                            <span>{mood.moodType}</span>
+                                            <span>{mood.intensity}</span>
+                                        </div>
+                                        )
+                                    })
+                                }
+                        </span>
+                        <br />
+                        <span>{entry.note}</span>
+                        <br />
+                        <button className="delete-entry" onClick={() => this.handleDelete(entry._id)}>X</button>
+                    </div>
+            })
+        }
 
 render() { 
-
-    const MappedEntries = (props) => {
-        const array = this.state.moodData.entries
-        console.log(array);
-        return (
-            Object.keys(array).map((i) => {
-                return  (
-
-                    <li key={array[i]._id} className="line-entry">
-                        {this.formatDate(array[i].created)}
-                        <br />
-                        {array[i].user}
-                        <br /><br />
-                        <br />
-                        {array[i].note}
-                        <button className="delete-entry" onClick={() => this.handleDelete(array[i]._id)}>X</button>
-                    </li>
-                )})
-        )
-
-    }
-    
 
     const NavBack = (props) => {
         return (
@@ -102,7 +108,6 @@ render() {
     }
 
     const ConfirmDelete = (props) => {
-        console.log('clicked');
         return (
             <div className="delete-modal">
                 <div className="modal-container">
@@ -126,7 +131,7 @@ render() {
         } else {
            body = (
                <ul>
-                <MappedEntries />
+                   {this.state.moodData && this.mappedEntries()}
                </ul>
             )
         }
@@ -141,8 +146,12 @@ render() {
     }
 }
 
-const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null,
-});
+const mapStateToProps = state => {
+    const {currentUser} = state.auth;
+        return {
+            loggedIn: state.auth.currentUser !== null,
+            userId: `${currentUser.id}`
+        };
+};
 
 export default connect(mapStateToProps)(MoodLog);

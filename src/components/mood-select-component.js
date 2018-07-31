@@ -145,9 +145,9 @@ class MoodSelectComponent extends Component {
             <div className="mood-select-container">
                 <Row type={'flex'} align={'center'} className={'p-lg'}>
                     <Col style={{ marginTop: '-2em'}}>
-                        <Link to='/dashboard'><Button type={'primary'} ghost>Back</Button></Link>
+                        <Link to='/dashboard' className="ghost-button"><Button className="ghost-button" type={'primary'} ghost>Back</Button></Link>
                         &nbsp;
-                        <Button type={'primary'} onClick={() => {this.props.onNextClick(this.state.data)}}>Next</Button>
+                        <Button className="primary-button"type={'primary'} onClick={() => {this.props.onNextClick(this.state.data)}}>Next</Button>
                     </Col>
                 </Row>
                 

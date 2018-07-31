@@ -12,10 +12,11 @@
     position: fixed;
     padding: .5em;
     height: 3em;
-    background-color: rgb(4, 156, 131);
+    background-color: rgba(0, 0, 0, 0.2);
     width: 100vw;
     z-index: 1;
     border-bottom: 4px solid rgba(0, 0, 0, 0.2);
+    box-shadow: inset 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .home-link {
@@ -43,12 +44,21 @@
     right: .5em;
     font-size: 80%;
     color: white;
+    border: none;
+    background-color: rgba(0,0,0,0,);
 }
 
 .home-link a,
 .info-link a,
 .logout-link a {
     color: white;
+    text-decoration: none;
+}
+
+.home-link a:hover,
+.info-link a:hover,
+.logout-link a:hover {
+    color: teal;
 }
 
 
@@ -61,13 +71,18 @@
     padding: .5em;
     height: 3em;
     width: 100vw;
-    background-color: rgb(4, 156, 131);
+    background-color: rgba(4, 156, 131, 0.8);
     z-index: 1;
     border-top: 4px solid rgba(0, 0, 0, 0.2);
+    box-shadow: inset 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 .footer a {
     color: white;
+}
+
+.footer a:hover {
+    color: teal;
 }
 
 .moodlog-link {
@@ -83,14 +98,26 @@
     right: 1em;
 }
 
+.footer-info-link:hover {
+    color: teal;
+}
+
 
 /*landing page styling*/
 
 .landing-page {
+    position: absolute;
+    top: 16vh;
+    left: 0;
+    right: 0;
+    margin: auto;
     padding: .5em;
+    padding-bottom: 2em;
     text-align: center;
-    padding-top: 10vh;
-    height: 100%;
+    width: 90%;
+    font-weight: bold;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: .5em;
 }
 
 .landing-welcome {
@@ -106,18 +133,19 @@
 .landing-description {
     font-size: 4vw;
     font-style: italic;
-}
-
-.landing-purpose {
-    font-size: 5vw;
-}
-
-.landing-bullets {
-    font-size: 3.5vw;
     width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.landing-bullets {
+    font-size: 4vw;
+    font-weight: bold;
+    width: 100%;
     max-width: 600px;
-    margin: auto;
     text-align: left;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .landing-action-call {
@@ -133,10 +161,18 @@
 
 .landing-link-login {
     margin-right: 4vw;
+    color: teal;
+    font-weight: bolder;
+}
+
+.landing-link-login:hover, .landing-link-signup:hover {
+    border-bottom: 2px solid teal;
+    color: rgba(0,0,0,0.6);
 }
 
 .landing-link-signup {
     margin-left: 4vw;
+    color: teal;
 }
 
 
@@ -183,12 +219,12 @@
 }
 
 .circle {
-    background-color: rgb(4, 156, 131);
+    background-color: rgba(4, 156, 131, 0.8);
     border: 4px solid rgb(4, 141, 118);
     border-radius: 50%;
     height: 100%;
     width: 100%;
-    box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3), inset 6px 8px 8px 6px rgba(0, 0, 0, 0.1), inset 6px 8px 8px 14px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard-question-text {
@@ -224,6 +260,10 @@
     top: 3em;
 }
 
+.ghost-button {
+    color: grey;
+}
+
 .mood-select-container hr {
     color: black;
     margin-bottom: 2vh;
@@ -237,10 +277,13 @@
 .mood-choice-container {
     display: flex;
     text-align: center;
+    padding: .5em;
 }
 
 .mood-choice-container:hover {
     background-color: rgba(0, 0, 0, 0.4);
+    border-radius: .5em;
+    padding: .5em;
 }
 
 .mood-img {
@@ -330,22 +373,10 @@
    
 }
 
-.mood-log li {
-    list-style: none;
-    text-align: left;
-    width: 95%;
-  
-}
-
-.mood-log li:hover {
-    background-color: rgba(0,0,0,.4);
-  
-}
-
-.line-entry {
+.entry {
     position: relative;
     border-bottom: 2px solid grey;
-    margin-top: 1vh;
+    margin-top: 1vw;
     padding: 1vw;
 
 }
@@ -376,6 +407,7 @@
     left: 0;
     z-index: 5;
     overflow-y: hidden;
+    text-align: center;
 }
 
 .modal-container {

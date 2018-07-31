@@ -22,23 +22,22 @@ class NoteComponent extends React.Component {
     };
 
 render() {
-    const stepData = this.props.props.step1;
-    let userMood = '';
-    if (stepData) {
-        userMood = Object.keys(stepData).map((keyName, keyIndex) => {
+
+    const UserMood = (props) => {
+        const stepData = this.props.props.step1;
+        if (stepData) {
             return (
-                <div key={keyName} id={keyIndex} className="mood-recap">
-                    <p>{keyName}<span className="intensity-recap">{stepData[keyName]}</span></p>
-                </div>
-            )
-      });
-    } else {
-        userMood = () => {
-            return (
-                <div>
-                </div>
-            )
-      }
+            Object.keys(stepData).map((keyName, keyIndex) => {
+                return (
+                    <div key={keyName} id={keyIndex} className="mood-recap">
+                        <p>{keyName}<span className="intensity-recap">{stepData[keyName]}</span></p>
+                    </div>
+                )
+                    })
+                )
+        } else {
+                return null
+        }
     }
 
     return (
@@ -52,7 +51,7 @@ render() {
                 </Row>
                         <Row type={'flex'} align={'center'}>
                             <div className="selected-moods-container">
-                                 {userMood}
+                                 <UserMood />
                                  </div>
                         </Row>
                     <Row type={'flex'} align={'center'}>
