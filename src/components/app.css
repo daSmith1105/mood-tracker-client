@@ -23,7 +23,8 @@
     position: absolute;
     top: 1em;
     left: .5em;
-    font-size: 80%;
+    font-size: 85%;
+    cursor: pointer;
 }
 
 .info-link {
@@ -31,6 +32,7 @@
     top: .5em;
     left: 1em;
     height: 100%;
+    cursor: pointer;
 }
 
 .app-title {
@@ -42,10 +44,14 @@
     position: absolute;
     top: .7em;
     right: .5em;
-    font-size: 80%;
+    font-size: 85%;
     color: white;
+    cursor: pointer;
+}
+
+.logout-link button {
+    background: rgba(0, 0, 0, 0);
     border: none;
-    background-color: rgba(0,0,0,0,);
 }
 
 .home-link a,
@@ -53,12 +59,16 @@
 .logout-link a {
     color: white;
     text-decoration: none;
+    cursor: pointer;
+    transition: 0.5s;
 }
 
 .home-link a:hover,
 .info-link a:hover,
 .logout-link a:hover {
-    color: teal;
+    color: goldenrod;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 
@@ -79,27 +89,35 @@
 
 .footer a {
     color: white;
+    cursor: pointer;
+    transition: 0.5s;
 }
 
 .footer a:hover {
-    color: teal;
+    color: goldenrod;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .moodlog-link {
     position: absolute;
     bottom: 1em;
     left: 1em;
-    font-size: 80%;
+    font-size: 85%;
+    cursor: pointer;
 }
 
 .footer-info-link {
     position: absolute;
     bottom: .7em;
     right: 1em;
+    cursor: pointer;
+    transition: 0.5s;
 }
 
 .footer-info-link:hover {
-    color: teal;
+    color: goldenrod;
+    cursor: pointer;
 }
 
 
@@ -107,7 +125,7 @@
 
 .landing-page {
     position: absolute;
-    top: 16vh;
+    top: 14vh;
     left: 0;
     right: 0;
     margin: auto;
@@ -116,7 +134,7 @@
     text-align: center;
     width: 90%;
     font-weight: bold;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: .5em;
 }
 
@@ -137,6 +155,7 @@
     margin-left: auto;
     margin-right: auto;
 }
+
 .landing-bullets {
     font-size: 4vw;
     font-weight: bold;
@@ -157,22 +176,28 @@
 .landing-links {
     font-size: 7vw;
     margin-top: 3vh;
+    cursor: pointer;
+    transition: 0.5s;
 }
 
 .landing-link-login {
     margin-right: 4vw;
     color: teal;
     font-weight: bolder;
+    transition: 0.5s;
 }
 
-.landing-link-login:hover, .landing-link-signup:hover {
+.landing-link-login:hover,
+.landing-link-signup:hover {
     border-bottom: 2px solid teal;
-    color: rgba(0,0,0,0.6);
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
 }
 
 .landing-link-signup {
     margin-left: 4vw;
     color: teal;
+    transition: 0.5s;
 }
 
 
@@ -182,11 +207,71 @@
     padding-top: 4em;
 }
 
+.demo-block {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: .5em;
+    width: 90%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.demo {
+    font-size: 5vw;
+}
+
+.demo p {
+    font-size: 4vw;
+}
+
+.login input,
+.signup input {
+    border-radius: .5em;
+    margin-bottom: .5em;
+}
+
+.login button,
+.signup button {
+    font-size: 6vw;
+    padding: .5em;
+    width: 60%;
+    color: white;
+    background-color: rgba(0, 128, 128, 0.7);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3), inset 6px 8px 8px 6px rgba(0, 0, 0, 0.1), inset 6px 8px 8px 14px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    border: none;
+    border-radius: .5em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    transition: 0.5s;
+}
+
+.redirect {
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: .5em;
+}
+
+.redirect a {
+    color: goldenrod;
+    margin-left: .5em;
+    transition: 0.5s;
+}
+
+.redirect a:hover {
+    color: teal;
+    text-decoration: underline;
+}
+
 
 /* signup styling */
 
 .signup {
     padding-top: 4em;
+    height: auto;
+    padding-bottom: 5em;
 }
 
 
@@ -199,16 +284,22 @@
 
 .dashboard-greeting {
     margin-top: 4vh;
+    background-color: rgba(0, 128, 128, 0.5);
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: .5em;
+    padding-bottom: .25em;
 }
 
 .dashboard-greeting h1 {
-    font-size: 12vw;
-    color: white;
+    font-size: 10vw;
+    color: lightyellow;
 }
 
 .dashboard-greeting h2 {
-    font-size: 7vw;
-    color: white;
+    font-size: 6.5vw;
+    color: lightyellow;
 }
 
 .circle-container {
@@ -216,6 +307,7 @@
     width: 60vw;
     margin: auto;
     margin-top: 10vh;
+    cursor: pointer;
 }
 
 .circle {
@@ -225,6 +317,14 @@
     height: 100%;
     width: 100%;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3), inset 6px 8px 8px 6px rgba(0, 0, 0, 0.1), inset 6px 8px 8px 14px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.circle:hover {
+    opacity: .8;
+    height: 95%;
+    width: 95%;
 }
 
 .dashboard-question-text {
@@ -255,11 +355,6 @@
     padding-bottom: 3em;
 }
 
-.sticky {
-    position: sticky; 
-    top: 3em;
-}
-
 .ghost-button {
     color: grey;
 }
@@ -272,18 +367,25 @@
 
 .mood-choice-container input {
     font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.mood-choice-container input {
+    opacity: .5;
 }
 
 .mood-choice-container {
     display: flex;
     text-align: center;
     padding: .5em;
+    transition: 0.5s;
 }
 
 .mood-choice-container:hover {
-    background-color: rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, .5);
+    cursor: pointer;
     border-radius: .5em;
-    padding: .5em;
 }
 
 .mood-img {
@@ -292,12 +394,12 @@
 }
 
 .mood-text {
-    font-size: 6vw;
+    font-size: 5vw;
     font-weight: bold;
 }
 
 .intensity-label {
-    font-size: 5vw;
+    font-size: 4.5vw;
     font-weight: bold;
     margin-top: -2vw;
 }
@@ -312,7 +414,13 @@
     border-radius: .5em;
     min-height: 40vh;
     height: auto;
-    box-shadow: 1px 2px 2px 2px rgba(0,0,0,.4);
+    box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, .4);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.note-area:hover {
+    background-color: lightyellow;
 }
 
 .mood-recap {
@@ -334,6 +442,9 @@
 .selected-moods-container {
     text-align: center;
     padding: .5em;
+    width: 90%;
+    height: 15vh;
+    overflow: scroll;
 }
 
 
@@ -344,12 +455,13 @@
     max-width: 600px;
     padding: .5em;
     border-radius: .5em;
-    min-height: 40vh;
-    height: auto;
+    height: 35vh;
     word-wrap: break-word;
     background-color: white;
-    box-shadow: 1px 2px 2px 2px rgba(0,0,0,.4);
+    box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, .4);
     text-align: left;
+    cursor: pointer;
+    background-color: lightyellow;
 }
 
 
@@ -357,7 +469,7 @@
 
 .mood-confirm {
     width: 90%;
-    max-width: 600px;
+    max-width: 800px;
     text-align: left;
     margin-left: auto;
     margin-right: auto;
@@ -366,33 +478,108 @@
 
 /* mood log styling */
 
+.mood-log-container {
+    width: 100%;
+    height: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .mood-log {
     padding-top: 10vh;
     padding-bottom: 10vh;
-    font-size: 3.75vw;
-   
+    width: 100%;
+    border-radius: .5em;
+    padding: .5em;
+}
+
+.log-container {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: .5em;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: .5em;
+    margin-bottom: 3em;
+}
+
+.log-back {
+    font-size: 4vw;
+    border: 2px solid goldenrod;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: .5em;
+    color: goldenrod;
+    padding: .5em;
+    margin-left: 1em;
+    width: 16vw;
+    margin-bottom: 1em;
+    margin-top: 4em;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.log-back:hover {
+    cursor: pointer;
+    background: teal;
+    opacity: .5;
+    color: white;
 }
 
 .entry {
     position: relative;
     border-bottom: 2px solid grey;
     margin-top: 1vw;
-    padding: 1vw;
+    padding: .5vw;
+    padding-top: .5em;
+    height: auto;
+    text-align: left;
+    overflow: auto;
+    margin-left: -.5em;
+    transition: 0.5s;
+}
 
+.entry:hover {
+    background: rgba(255, 255, 255, .5);
+    cursor: pointer;
+    border-radius: .5em;
 }
 
 .delete-entry {
     position: absolute;
-    top: 0;
-    right: 1em;
-    width: 9vw;
-    height: auto;
-    padding: .5em;
-    font-size: 4vw;
-    border-radius: .5em;
-    background: radial-gradient(circle, rgb(252, 172, 172), rgb(241, 70, 70), red);
-    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
-    border: none;
+    top: 1.6em;
+    right: 1.4em;
+    cursor: pointer;
+}
+
+.delete-image {
+    position: absolute;
+    top: -1.5em;
+    right: -1.5em;
+    cursor: pointer;
+    width: 10vw;
+    height: 10vw;
+    transition: 0.5s;
+}
+
+.delete-image:hover {
+    width: 12vw;
+    height: 12vw;
+    cursor: pointer;
+}
+
+.mLog-date {
+    font-size: 3.8vw;
+    background-color: rgba(0, 128, 128, 0.5);
+    border-radius: .7em;
+    color: white;
+    padding: .4em;
+    margin-left: -.1em;
+    overflow: visible;
+    margin-top: .5em;
+    margin-bottom: 1em;
 }
 
 
@@ -413,27 +600,37 @@
 .modal-container {
     margin: auto;
     margin-top: 25vh;
-    width: 70vw;
-    height: 60vw;
-    background-color: white;
+    width: 80vw;
+    height: 65vw;
+    background: rgba(255, 255, 255, .8);
     border-radius: .5em;
     padding: 5%;
     box-shadow: 2px 4px 4px 6px rgba(0, 0, 0, .5);
 }
 
 .modal-container h1 {
-    font-size: 4.5vw;
+    font-size: 4.8vw;
 }
 
 .modal-container button {
     margin-top: 10vh;
     margin-left: 3vw;
     margin-right: 3vw;
-    width: 12vw;
-    padding: .5em;
-    font-size: 3vw;
+    width: 18vw;
+    padding: .7em;
+    font-size: 4vw;
     border: none;
     border-radius: .5em;
     background-color: goldenrod;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .5);
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.modal-container .no-btn {
+    background: rgba(0, 0, 0, 0);
+    color: goldenrod;
+    border: 2px solid goldenrod;
+    cursor: pointer;
 }

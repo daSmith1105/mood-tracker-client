@@ -12,7 +12,7 @@ export function SignUpPage(props) {
     }
 
     const LoginLink = (props) => (
-        <div>
+        <div className="redirect">
             <p>Already have an account? 
                 <span>
                     <Link to="/login">

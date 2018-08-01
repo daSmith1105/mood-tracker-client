@@ -57,7 +57,7 @@ export class SignupForm extends React.Component {
                 />
                 <hr />
                 </div>
-                <button className="submit-registration"
+                <button className="redirect"
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
                     Let's Go!

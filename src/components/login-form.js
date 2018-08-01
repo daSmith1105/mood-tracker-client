@@ -39,7 +39,6 @@ export class LoginForm extends React.Component {
                         />
                         </div>
                         <hr />
-                        <br />
                         <div className="password-block">
                         <label htmlFor="password">Password</label>
                         <Field className="password-entry"

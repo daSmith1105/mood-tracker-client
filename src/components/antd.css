@@ -18960,7 +18960,10 @@ tr.ant-table-expanded-row:hover {
 .ant-tabs:after {
     clear: both;
 }
+
+
 /**/
+
 .ant-tabs-ink-bar {
     z-index: 1;
     position: absolute;
@@ -19183,7 +19186,10 @@ tr.ant-table-expanded-row:hover {
 .ant-tabs-nav .ant-tabs-tab .anticon {
     margin-right: 8px;
 }
+
+
 /**/
+
 .ant-tabs-nav .ant-tabs-tab-active {
     color: #009a9a;
     font-weight: 500;

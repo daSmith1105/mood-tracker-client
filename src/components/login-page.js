@@ -12,7 +12,7 @@ export function LoginPage(props) {
     }
 
     const SignupLink = (props) => (
-        <div>
+        <div className="redirect">
             <p>New to Moodsense? 
                 <span>
                     <Link to="/signup">
@@ -26,6 +26,11 @@ export function LoginPage(props) {
     return (
         <div className="login" style={{textAlign: 'center', maxWidth: '500px', margin: 'auto'}}>
             <h2 className="heading">Login</h2>
+                <div className="demo-block">
+                <h3 className="demo">You may demo the app using:</h3>
+                <p>Username: demo</p>
+                <p>Password: moodsense18</p>
+            </div>
             <div className="login-container">
             <LoginForm />
             <SignupLink />

@@ -20,14 +20,12 @@ class MoodSelectComponent extends Component {
             currentStepOneData.happy = el.target.value;
         this.setState({data: currentStepOneData});
         };
-        console.log(this.state.data);
     };
 
     clearHappy = () => {
         let stateDataCopy = this.state.data;
         delete stateDataCopy.happy
         this.setState({ data: stateDataCopy })
-        console.log(this.state.data);
     };
 
     onChangeSad = (el) => {
@@ -38,14 +36,12 @@ class MoodSelectComponent extends Component {
             currentStepOneData.sad = el.target.value;
         this.setState({data: currentStepOneData});
         }
-        console.log(this.state.data);
     };
 
     clearSad = () => {
         let stateDataCopy = this.state.data;
         delete stateDataCopy.sad
         this.setState({ data: stateDataCopy })
-        console.log(this.state.data);
     };
 
     onChangeExcited = (el) => {
@@ -56,14 +52,12 @@ class MoodSelectComponent extends Component {
              currentStepOneData.excited = el.target.value;
          this.setState({data: currentStepOneData});
          }
-        console.log(this.state.data);
      };
 
      clearExcited = () => {
         let stateDataCopy = this.state.data;
         delete stateDataCopy.excited
         this.setState({ data: stateDataCopy })
-        console.log(this.state.data);
     };
 
      onChangeGoofy = (el) => {
@@ -74,14 +68,12 @@ class MoodSelectComponent extends Component {
              currentStepOneData.goofy = el.target.value;
          this.setState({data: currentStepOneData});
          }
-        console.log(this.state.data);
      };
 
      clearGoofy = () => {
         let stateDataCopy = this.state.data;
         delete stateDataCopy.goofy
         this.setState({ data: stateDataCopy })
-        console.log(this.state.data);
     };
 
      onChangeMotivated = (el) => {
@@ -92,14 +84,12 @@ class MoodSelectComponent extends Component {
              currentStepOneData.motivated = el.target.value;
          this.setState({data: currentStepOneData});
          }
-        console.log(this.state.data);
      };
 
      clearMotivated = () => {
         let stateDataCopy = this.state.data;
         delete stateDataCopy.motivated
         this.setState({ data: stateDataCopy })
-        console.log(this.state.data);
     };
 
      onChangeConfused = (el) => {
@@ -110,17 +100,13 @@ class MoodSelectComponent extends Component {
              currentStepOneData.confused = el.target.value;
          this.setState({data: currentStepOneData});
          }
-        console.log(this.state.data);
      };
 
      clearConfused = () => {
         let stateDataCopy = this.state.data;
         delete stateDataCopy.confused
         this.setState({ data: stateDataCopy })
-        console.log(this.state.data);
     };
-
-     
      onChangeRelieved = (el) => {
          if (!el.target.value || el.target.value.keyname === 0) {
              this.setState({data: this.state.data});
@@ -129,14 +115,12 @@ class MoodSelectComponent extends Component {
              currentStepOneData.relieved = el.target.value;
          this.setState({data: currentStepOneData});
          }
-        console.log(this.state.data);
      };
 
      clearRelieved = () => {
         let stateDataCopy = this.state.data;
         delete stateDataCopy.relieved
         this.setState({ data: stateDataCopy })
-        console.log(this.state.data);
     };
 
     render() {

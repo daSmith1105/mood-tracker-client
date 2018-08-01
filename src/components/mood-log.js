@@ -2,6 +2,7 @@ import React from 'react';
 import {API_BASE_URL} from '../config';
 import history from './history';
 import { connect } from 'react-redux';
+import remove from '../images/delete.png';
 import moment from 'moment';
 import './app.css';
 
@@ -22,6 +23,7 @@ export class MoodLog extends React.Component {
         this.handleDelete = this.handleDelete.bind(this);
 
         this.state.refresh && this.getData()
+
     }
 
     componentDidMount() {
@@ -34,12 +36,10 @@ export class MoodLog extends React.Component {
             }
     }   
     
-
     getData = () => {
         fetch(`${API_BASE_URL}/mood-entries/` + this.props.userId)
         .then(data => data.json())
         .then((data) => { 
-            console.log(data)
             this.setState({ 
                 moodData: data,
             }) 
@@ -70,29 +70,76 @@ export class MoodLog extends React.Component {
     }
 
     mappedEntries = () => {
-        console.log(this.state.moodData);
+        const moodblockcontainer = {
+            width:'100%',
+            height:'14vw',
+            overflow: 'scroll',
+            padding: '.15em',
+            paddingTop: '.25em',
+        }
+        const moodblock = {
+            float:'left',
+            marginRight:'1em',
+            display: 'inline-block', 
+            marginBottom: '.5em',
+            marginTop: '.5em'
+        }
+        const moodtype = {
+            fontSize: '3.5vw',
+            fontWeight: 'bold'
+        }
+        const moodint = {
+            backgroundColor: 'goldenrod',
+            border:'2px solid goldenrod',
+            borderRadius: '50%',
+            color: 'white',
+            fontSize: '3vw',
+            fontWeight: 'bold',
+            padding: '.4em',
+            paddingTop: '0',
+            paddingBottom: '0',
+            marginLeft: '.2em'
+        }
+        const moodnote = {
+            clear: 'both',
+            fontSize: '3.5vw',
+            fontWeight: 'bold',
+            width:'100%',
+            height: '26vw',
+            overflow: 'scroll',
+            padding: '.5em',
+            border: '1px solid rgba(0,0,0,0.5)',
+            borderRadius: '.5em',
+            textAlign: 'left',
+            wordWrap: 'break-word',
+            marginTop: '-1em',
+            marginBottom: '1em'
+        }
         let entries = this.state.moodData.entries;
         return entries.map( entry => {
-            console.log(entry.moods);
-            return <div key={entry._id} className="entry">
 
-                        <span>{this.formatDate(entry.created)}</span>
+            return <div key={entry._id} className="entry">
+            
+                        <button className="delete-entry" onClick={() => this.handleDelete(entry._id)}><img src={remove} alt="delete" className="delete-image"/></button>
+
+                        <span className="mLog-date">{this.formatDate(entry.created)}</span>
                         <br />
-                        <span>{
+
+                        <div style={moodblockcontainer}>{
                                 entry.moods.map( mood => {
                                     return (
-                                        <div key={mood._id}>
-                                            <span>{mood.moodType}</span>
-                                            <span>{mood.intensity}</span>
+                                        <div key={mood._id} style={moodblock}>
+
+                                                <span style={moodtype}>{mood.moodType}</span>
+                                                <span style={moodint}>{mood.intensity}</span>
+
                                         </div>
                                         )
                                     })
                                 }
-                        </span>
+                        </div>
                         <br />
-                        <span>{entry.note}</span>
-                        <br />
-                        <button className="delete-entry" onClick={() => this.handleDelete(entry._id)}>X</button>
+                        <div style={moodnote}>{entry.note}</div>
                     </div>
             })
         }
@@ -102,7 +149,7 @@ render() {
     const NavBack = (props) => {
         return (
             <div>
-                <button onClick={history.goBack}>Back</button>
+                <button onClick={history.goBack} className="log-back">Back</button>
             </div>
         )
     }
@@ -112,7 +159,7 @@ render() {
             <div className="delete-modal">
                 <div className="modal-container">
                     <h1> Are you sure you want to delete this entry?</h1>
-                    <button onClick={ () => (this.setState({delete: false}))}>No</button>
+                    <button onClick={ () => (this.setState({delete: false}))} className="no-btn">No</button>
                     <button onClick={ () => (this.deleteEntry(this.state.deleteId)) }>Yes</button>
                 </div>
             </div>
@@ -130,17 +177,19 @@ render() {
             );
         } else {
            body = (
-               <ul>
+               <div className="mood-log-container">
                    {this.state.moodData && this.mappedEntries()}
-               </ul>
+               </div>
             )
         }
 
         return (
             <div className="mood-log">
                     <NavBack />
-                    {this.state.delete ? <ConfirmDelete /> : null}
-                    {body}
+                    <div className="log-container">
+                        {this.state.delete ? <ConfirmDelete /> : null}
+                        {body}
+                    </div>
             </div>
         )
     }
