@@ -146,10 +146,18 @@ class MoodSelectComponent extends Component {
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeHappy}>
-                                    <Radio onClick={this.clearHappy} defaultChecked>N/A</Radio>
-                                    <Radio value={1} >1</Radio>
-                                    <Radio value={2} >2</Radio>
-                                    <Radio value={3} >3</Radio>
+                                    <Radio onClick={this.clearHappy} defaultChecked>
+                                        <span className="bold">N/A</span>
+                                    </Radio>
+                                    <Radio value={1} >
+                                        <span className="bold">1</span>
+                                    </Radio>
+                                    <Radio value={2} >
+                                        <span className="bold">2</span>
+                                    </Radio>
+                                    <Radio value={3} >
+                                        <span className="bold">3</span>
+                                    </Radio>
                                 </RadioGroup>
                             </Col>
                         </Row>
@@ -168,10 +176,18 @@ class MoodSelectComponent extends Component {
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearSad} defaultChecked>N/A</Radio>
-                                    <Radio value={1} >1</Radio>
-                                    <Radio value={2} >2</Radio>
-                                    <Radio value={3} >3</Radio>
+                                    <Radio onClick={this.clearSad} defaultChecked>
+                                        <span className="bold">N/A</span>
+                                    </Radio>
+                                    <Radio value={1} >
+                                        <span className="bold">1</span>
+                                    </Radio>
+                                    <Radio value={2} >
+                                        <span className="bold">2</span>
+                                    </Radio>
+                                    <Radio value={3} >
+                                        <span className="bold">3</span>
+                                    </Radio>
                                 </RadioGroup>
                             </Col>
                        </Row>
@@ -190,10 +206,18 @@ class MoodSelectComponent extends Component {
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeExcited}>
-                                    <Radio onClick={this.clearExcited} defaultChecked>N/A</Radio>
-                                    <Radio value={1}>1</Radio>
-                                    <Radio value={2}>2</Radio>
-                                    <Radio value={3}>3</Radio>
+                                    <Radio onClick={this.clearExcited} defaultChecked>
+                                        <span className="bold">N/A</span>
+                                    </Radio>
+                                    <Radio value={1} >
+                                        <span className="bold">1</span>
+                                    </Radio>
+                                    <Radio value={2} >
+                                        <span className="bold">2</span>
+                                    </Radio>
+                                    <Radio value={3} >
+                                        <span className="bold">3</span>
+                                    </Radio>
                                 </RadioGroup>
                             </Col>
                        </Row>
@@ -212,10 +236,18 @@ class MoodSelectComponent extends Component {
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeGoofy}>
-                                    <Radio onClick={this.clearGoofy} defaultChecked>N/A</Radio>
-                                    <Radio value={1}>1</Radio>
-                                    <Radio value={2}>2</Radio>
-                                    <Radio value={3}>3</Radio>
+                                    <Radio onClick={this.clearGoofy} defaultChecked>
+                                        <span className="bold">N/A</span>
+                                    </Radio>
+                                    <Radio value={1} >
+                                        <span className="bold">1</span>
+                                    </Radio>
+                                    <Radio value={2} >
+                                        <span className="bold">2</span>
+                                    </Radio>
+                                    <Radio value={3} >
+                                        <span className="bold">3</span>
+                                    </Radio>
                                 </RadioGroup>
                             </Col>
                        </Row>
@@ -234,10 +266,18 @@ class MoodSelectComponent extends Component {
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeMotivated}>
-                                    <Radio onClick={this.clearMotivated} defaultChecked>N/A</Radio>
-                                    <Radio value={1}>1</Radio>
-                                    <Radio value={2}>2</Radio>
-                                    <Radio value={3}>3</Radio>
+                                    <Radio onClick={this.clearMotivated} defaultChecked>
+                                        <span className="bold">N/A</span>
+                                    </Radio>
+                                    <Radio value={1} >
+                                        <span className="bold">1</span>
+                                    </Radio>
+                                    <Radio value={2} >
+                                        <span className="bold">2</span>
+                                    </Radio>
+                                    <Radio value={3} >
+                                        <span className="bold">3</span>
+                                    </Radio>
                                 </RadioGroup>
                             </Col>
                        </Row>
@@ -256,10 +296,18 @@ class MoodSelectComponent extends Component {
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeConfused}>
-                                    <Radio onClick={this.clearConfused} defaultChecked>N/A</Radio>
-                                    <Radio value={1}>1</Radio>
-                                    <Radio value={2}>2</Radio>
-                                    <Radio value={3}>3</Radio>
+                                    <Radio onClick={this.clearConfused} defaultChecked>
+                                        <span className="bold">N/A</span>
+                                    </Radio>
+                                    <Radio value={1} >
+                                        <span className="bold">1</span>
+                                    </Radio>
+                                    <Radio value={2} >
+                                        <span className="bold">2</span>
+                                    </Radio>
+                                    <Radio value={3} >
+                                        <span className="bold">3</span>
+                                    </Radio>
                                 </RadioGroup>
                             </Col>
                        </Row>
@@ -278,10 +326,18 @@ class MoodSelectComponent extends Component {
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeRelieved}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
-                                    <Radio value={1}>1</Radio>
-                                    <Radio value={2}>2</Radio>
-                                    <Radio value={3}>3</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                        <span className="bold">N/A</span>
+                                    </Radio>
+                                    <Radio value={1} >
+                                        <span className="bold">1</span>
+                                    </Radio>
+                                    <Radio value={2} >
+                                        <span className="bold">2</span>
+                                    </Radio>
+                                    <Radio value={3} >
+                                        <span className="bold">3</span>
+                                    </Radio>
                                 </RadioGroup>
                             </Col>
                        </Row>
@@ -300,10 +356,18 @@ class MoodSelectComponent extends Component {
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
-                                    <Radio value={1}>1</Radio>
-                                    <Radio value={2}>2</Radio>
-                                    <Radio value={3}>3</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                        <span className="bold">N/A</span>
+                                    </Radio>
+                                    <Radio value={1} >
+                                        <span className="bold">1</span>
+                                    </Radio>
+                                    <Radio value={2} >
+                                        <span className="bold">2</span>
+                                    </Radio>
+                                    <Radio value={3} >
+                                        <span className="bold">3</span>
+                                    </Radio>
                                 </RadioGroup>
                             </Col>
                        </Row>
@@ -322,10 +386,18 @@ class MoodSelectComponent extends Component {
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
-                                    <Radio value={1}>1</Radio>
-                                    <Radio value={2}>2</Radio>
-                                    <Radio value={3}>3</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                        <span className="bold">N/A</span>
+                                    </Radio>
+                                    <Radio value={1} >
+                                        <span className="bold">1</span>
+                                    </Radio>
+                                    <Radio value={2} >
+                                        <span className="bold">2</span>
+                                    </Radio>
+                                    <Radio value={3} >
+                                        <span className="bold">3</span>
+                                    </Radio>
                                 </RadioGroup>
                             </Col>
                        </Row>
@@ -344,10 +416,18 @@ class MoodSelectComponent extends Component {
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
-                                    <Radio value={1}>1</Radio>
-                                    <Radio value={2}>2</Radio>
-                                    <Radio value={3}>3</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                        <span className="bold">N/A</span>
+                                    </Radio>
+                                    <Radio value={1} >
+                                        <span className="bold">1</span>
+                                    </Radio>
+                                    <Radio value={2} >
+                                        <span className="bold">2</span>
+                                    </Radio>
+                                    <Radio value={3} >
+                                        <span className="bold">3</span>
+                                    </Radio>
                                 </RadioGroup>
                             </Col>
                        </Row>
@@ -366,10 +446,18 @@ class MoodSelectComponent extends Component {
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
-                                    <Radio value={1}>1</Radio>
-                                    <Radio value={2}>2</Radio>
-                                    <Radio value={3}>3</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                        <span className="bold">N/A</span>
+                                    </Radio>
+                                    <Radio value={1} >
+                                        <span className="bold">1</span>
+                                    </Radio>
+                                    <Radio value={2} >
+                                        <span className="bold">2</span>
+                                    </Radio>
+                                    <Radio value={3} >
+                                        <span className="bold">3</span>
+                                    </Radio>
                                 </RadioGroup>
                             </Col>
                        </Row>
@@ -388,10 +476,18 @@ class MoodSelectComponent extends Component {
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
-                                    <Radio value={1}>1</Radio>
-                                    <Radio value={2}>2</Radio>
-                                    <Radio value={3}>3</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                        <span className="bold">N/A</span>
+                                    </Radio>
+                                    <Radio value={1} >
+                                        <span className="bold">1</span>
+                                    </Radio>
+                                    <Radio value={2} >
+                                        <span className="bold">2</span>
+                                    </Radio>
+                                    <Radio value={3} >
+                                        <span className="bold">3</span>
+                                    </Radio>
                                 </RadioGroup>
                             </Col>
                        </Row>
@@ -410,10 +506,18 @@ class MoodSelectComponent extends Component {
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
-                                    <Radio value={1}>1</Radio>
-                                    <Radio value={2}>2</Radio>
-                                    <Radio value={3}>3</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                        <span className="bold">N/A</span>
+                                    </Radio>
+                                    <Radio value={1} >
+                                        <span className="bold">1</span>
+                                    </Radio>
+                                    <Radio value={2} >
+                                        <span className="bold">2</span>
+                                    </Radio>
+                                    <Radio value={3} >
+                                        <span className="bold">3</span>
+                                    </Radio>
                                 </RadioGroup>
                             </Col>
                        </Row>
@@ -432,10 +536,18 @@ class MoodSelectComponent extends Component {
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
-                                    <Radio value={1}>1</Radio>
-                                    <Radio value={2}>2</Radio>
-                                    <Radio value={3}>3</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                        <span className="bold">N/A</span>
+                                    </Radio>
+                                    <Radio value={1} >
+                                        <span className="bold">1</span>
+                                    </Radio>
+                                    <Radio value={2} >
+                                        <span className="bold">2</span>
+                                    </Radio>
+                                    <Radio value={3} >
+                                        <span className="bold">3</span>
+                                    </Radio>
                                 </RadioGroup>
                             </Col>
                        </Row>
@@ -454,10 +566,18 @@ class MoodSelectComponent extends Component {
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
-                                    <Radio value={1}>1</Radio>
-                                    <Radio value={2}>2</Radio>
-                                    <Radio value={3}>3</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                        <span className="bold">N/A</span>
+                                    </Radio>
+                                    <Radio value={1} >
+                                        <span className="bold">1</span>
+                                    </Radio>
+                                    <Radio value={2} >
+                                        <span className="bold">2</span>
+                                    </Radio>
+                                    <Radio value={3} >
+                                        <span className="bold">3</span>
+                                    </Radio>
                                 </RadioGroup>
                             </Col>
                        </Row>
@@ -476,10 +596,18 @@ class MoodSelectComponent extends Component {
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
-                                    <Radio value={1}>1</Radio>
-                                    <Radio value={2}>2</Radio>
-                                    <Radio value={3}>3</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                        <span className="bold">N/A</span>
+                                    </Radio>
+                                    <Radio value={1} >
+                                        <span className="bold">1</span>
+                                    </Radio>
+                                    <Radio value={2} >
+                                        <span className="bold">2</span>
+                                    </Radio>
+                                    <Radio value={3} >
+                                        <span className="bold">3</span>
+                                    </Radio>
                                 </RadioGroup>
                             </Col>
                        </Row>
@@ -498,10 +626,18 @@ class MoodSelectComponent extends Component {
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
                                 <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>N/A</Radio>
-                                    <Radio value={1}>1</Radio>
-                                    <Radio value={2}>2</Radio>
-                                    <Radio value={3}>3</Radio>
+                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                        <span className="bold">N/A</span>
+                                    </Radio>
+                                    <Radio value={1} >
+                                        <span className="bold">1</span>
+                                    </Radio>
+                                    <Radio value={2} >
+                                        <span className="bold">2</span>
+                                    </Radio>
+                                    <Radio value={3} >
+                                        <span className="bold">3</span>
+                                    </Radio>
                                 </RadioGroup>
                             </Col>
                        </Row>

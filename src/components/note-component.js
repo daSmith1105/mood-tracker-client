@@ -13,12 +13,9 @@ class NoteComponent extends React.Component {
     }
 
     onChangeNote = (val) => {
-        // console.log(val);
-        // console.log(val.target.value);
         let currentStepTwoData = this.state.data;
         currentStepTwoData.note = val.target.value;
         this.setState({data: currentStepTwoData});
-        // console.log(this.state.data);
     };
 
 render() {
@@ -30,7 +27,11 @@ render() {
             Object.keys(stepData).map((keyName, keyIndex) => {
                 return (
                     <div key={keyName} id={keyIndex} className="mood-recap">
-                        <p>{keyName}<span className="intensity-recap">{stepData[keyName]}</span></p>
+                        <p>{keyName}
+                            <span className="intensity-recap">
+                                <span>{stepData[keyName]}</span>
+                            </span>
+                        </p>
                     </div>
                 )
                     })

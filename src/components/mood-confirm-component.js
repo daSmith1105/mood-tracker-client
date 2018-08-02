@@ -27,9 +27,9 @@ render() {
     const userNote = this.props.props.step2.note;
     console.log(userNote);
     return (
-            <div>
+            <div className="confirm-container">
             <Row type={'flex'} align={'center'} className={'p-lg'}>
-                        <Col style={{ position: 'fixed', top: '9em'}}>
+                        <Col>
                         <Button type={'primary'} ghost onClick={() => {this.props.onPrevClick()}}>Previous</Button>
                             &nbsp;
                             <Button type={'primary'} onClick={() => {this.props.onNextClick(this.state.data)}}>Next</Button>

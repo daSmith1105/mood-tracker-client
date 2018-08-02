@@ -25,11 +25,11 @@ export function LoginPage(props) {
 
     return (
         <div className="login" style={{textAlign: 'center', maxWidth: '500px', margin: 'auto'}}>
-            <h2 className="heading">Login</h2>
+            <h1 className="login-heading">Login</h1>
                 <div className="demo-block">
                 <h3 className="demo">You may demo the app using:</h3>
-                <p>Username: demo</p>
-                <p>Password: moodsense18</p>
+                <p className="demo-info">Username: demo</p>
+                <p className="demo-info">Password: moodsense18</p>
             </div>
             <div className="login-container">
             <LoginForm />

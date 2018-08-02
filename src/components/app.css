@@ -11,7 +11,8 @@
     text-align: center;
     position: fixed;
     padding: .5em;
-    height: 3em;
+    height: 14vw;
+    max-height: 55px;
     background-color: rgba(0, 0, 0, 0.2);
     width: 100vw;
     z-index: 1;
@@ -23,8 +24,7 @@
     position: absolute;
     top: 1em;
     left: .5em;
-    font-size: 85%;
-    cursor: pointer;
+    font-size: 90%;
 }
 
 .info-link {
@@ -32,7 +32,6 @@
     top: .5em;
     left: 1em;
     height: 100%;
-    cursor: pointer;
 }
 
 .app-title {
@@ -42,11 +41,10 @@
 
 .logout-link {
     position: absolute;
-    top: .7em;
+    top: .75em;
     right: .5em;
-    font-size: 85%;
+    font-size: 90%;
     color: white;
-    cursor: pointer;
 }
 
 .logout-link button {
@@ -79,7 +77,8 @@
     bottom: 0;
     left: 0;
     padding: .5em;
-    height: 3em;
+    height: 14vw;
+    max-height: 55px;
     width: 100vw;
     background-color: rgba(4, 156, 131, 0.8);
     z-index: 1;
@@ -89,7 +88,6 @@
 
 .footer a {
     color: white;
-    cursor: pointer;
     transition: 0.5s;
 }
 
@@ -103,15 +101,13 @@
     position: absolute;
     bottom: 1em;
     left: 1em;
-    font-size: 85%;
-    cursor: pointer;
+    font-size: 90%;
 }
 
 .footer-info-link {
     position: absolute;
     bottom: .7em;
     right: 1em;
-    cursor: pointer;
     transition: 0.5s;
 }
 
@@ -125,31 +121,32 @@
 
 .landing-page {
     position: absolute;
-    top: 14vh;
+    top: 4em;
     left: 0;
     right: 0;
     margin: auto;
     padding: .5em;
-    padding-bottom: 2em;
+    padding-bottom: 1em;
     text-align: center;
     width: 90%;
+    max-width: 600px;
     font-weight: bold;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: .5em;
 }
 
 .landing-welcome {
-    font-size: 7vw;
+    font-size: 130%;
     margin-bottom: 0;
 }
 
 .landing-tagline {
-    font-size: 6vw;
+    font-size: 110%;
     margin-top: 0;
 }
 
 .landing-description {
-    font-size: 4vw;
+    font-size: 90%;
     font-style: italic;
     width: 90%;
     margin-left: auto;
@@ -157,10 +154,10 @@
 }
 
 .landing-bullets {
-    font-size: 4vw;
+    font-size: 85%;
     font-weight: bold;
     width: 100%;
-    max-width: 600px;
+    max-width: 300px;
     text-align: left;
     list-style: none;
     margin-left: auto;
@@ -168,15 +165,14 @@
 }
 
 .landing-action-call {
-    font-size: 8vw;
+    font-size: 180%;
     margin-bottom: 0;
-    margin-top: 4vh;
+    margin-top: 1em;
 }
 
 .landing-links {
-    font-size: 7vw;
-    margin-top: 3vh;
-    cursor: pointer;
+    font-size: 180%;
+    margin-top: .5em;
     transition: 0.5s;
 }
 
@@ -201,10 +197,19 @@
 }
 
 
-/* login styling */
+/* login, signup styling */
 
-.login {
+.login,
+.signup {
     padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+.login-heading,
+.signup-heading {
+    font-size: 160%;
+    margin: 0;
+    margin-bottom: .5em;
 }
 
 .demo-block {
@@ -214,41 +219,55 @@
     height: auto;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 1em;
+    padding: .25em;
 }
 
 .demo {
-    font-size: 5vw;
+    font-size: 120%;
 }
 
-.demo p {
-    font-size: 4vw;
+.demo-info {
+    font-size: 100%;
+    margin: 0;
 }
 
 .login input,
 .signup input {
     border-radius: .5em;
-    margin-bottom: .5em;
+    margin-bottom: .25em;
+    padding-left: .5em;
+}
+
+.login label,
+.signup label {
+    font-weight: bold;
 }
 
 .login button,
 .signup button {
-    font-size: 6vw;
+    font-size: 120%;
     padding: .5em;
-    width: 60%;
+    width: 50%;
     color: white;
     background-color: rgba(0, 128, 128, 0.7);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3), inset 6px 8px 8px 6px rgba(0, 0, 0, 0.1), inset 6px 8px 8px 14px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
     border: none;
     border-radius: .5em;
     margin-bottom: 1em;
-    margin-top: 1em;
+    margin-top: .25em;
     transition: 0.5s;
+}
+
+.login button:hover,
+.signup button:hover {
+    opacity: .8;
+    width: 80%;
 }
 
 .redirect {
     background-color: rgba(255, 255, 255, 0.6);
-    width: 90%;
+    width: 80%;
     margin-right: auto;
     margin-left: auto;
     border-radius: .5em;
@@ -263,15 +282,33 @@
 .redirect a:hover {
     color: teal;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 
-/* signup styling */
+/* input error styling */
 
-.signup {
-    padding-top: 4em;
-    height: auto;
-    padding-bottom: 5em;
+.form-warning,
+.form-error {
+    border: none;
+    border-radius: .5em;
+    padding: .25em;
+    color: white;
+    font-weight: bold;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: .15em;
+}
+
+.form-warning {
+    background-color: rgba( 218, 165, 32, 0.5);
+    width: 50%;
+}
+
+.form-error {
+    background-color: rgba( 255, 0, 0, 0.5);
+    width: 90%;
 }
 
 
@@ -286,6 +323,7 @@
     margin-top: 4vh;
     background-color: rgba(0, 128, 128, 0.5);
     width: 90%;
+    max-width: 600px;
     margin-right: auto;
     margin-left: auto;
     border-radius: .5em;
@@ -293,44 +331,65 @@
 }
 
 .dashboard-greeting h1 {
-    font-size: 10vw;
+    font-size: 200%;
     color: lightyellow;
+    margin: 0;
+    margin-bottom: .5em;
 }
 
 .dashboard-greeting h2 {
-    font-size: 6.5vw;
+    font-size: 140%;
     color: lightyellow;
 }
 
-.circle-container {
-    height: 60vw;
-    width: 60vw;
-    margin: auto;
-    margin-top: 10vh;
+.circle-text {
+    width: 60%;
+    max-width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7%;
+}
+
+.circle-text:hover {
     cursor: pointer;
 }
 
-.circle {
+.circle-text:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
     background-color: rgba(4, 156, 131, 0.8);
     border: 4px solid rgb(4, 141, 118);
-    border-radius: 50%;
-    height: 100%;
-    width: 100%;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3), inset 6px 8px 8px 6px rgba(0, 0, 0, 0.1), inset 6px 8px 8px 14px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
     transition: 0.5s;
 }
 
-.circle:hover {
-    opacity: .8;
-    height: 95%;
-    width: 95%;
+.circle-text div {
+    float: left;
+    width: 100%;
+    padding-top: 40%;
+    line-height: 2em;
+    margin: 0;
+    margin-top: -0.5em;
+    font-size: 150%;
+    text-align: center;
+    color: lightgoldenrodyellow;
 }
 
-.dashboard-question-text {
-    font-size: 7vw;
-    margin-top: 5vw;
-    color: lightgoldenrodyellow;
+.circle-text div:hover {
+    font-size: 170%;
+    color: white;
+}
+
+.new-line {
+    display: block;
+    margin: 0;
+    margin-top: -.5em;
 }
 
 
@@ -361,18 +420,16 @@
 
 .mood-select-container hr {
     color: black;
-    margin-bottom: 2vh;
-    margin-top: -2vh;
+    margin-bottom: 2%;
+    margin-top: -1em;
 }
 
-.mood-choice-container input {
+.bold {
     font-weight: bold;
-    cursor: pointer;
-    transition: 0.5s;
 }
 
-.mood-choice-container input {
-    opacity: .5;
+.mood-choice-container input:hover {
+    cursor: pointer;
 }
 
 .mood-choice-container {
@@ -389,31 +446,56 @@
 }
 
 .mood-img {
-    height: 10vw;
-    width: 10vw;
+    width: 50%;
+    height: auto;
+    max-width: 50px;
 }
 
 .mood-text {
-    font-size: 5vw;
+    font-size: 120%;
     font-weight: bold;
 }
 
 .intensity-label {
-    font-size: 4.5vw;
+    font-size: 120%;
     font-weight: bold;
-    margin-top: -2vw;
+}
+
+
+/* mood recap styling */
+
+.mood-recap p {
+    font-size: 110%;
+}
+
+.confirm-container {
+    width: 90%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -2.2em;
 }
 
 
 /* notes component styling */
+
+.selected-moods-container {
+    text-align: center;
+    padding: .5em;
+    width: 100%;
+    max-width: 600px;
+    height: 14vh;
+    overflow: scroll;
+    margin-top: -1em;
+    margin-bottom: 1em;
+}
 
 .note-area {
     width: 90%;
     max-width: 600px;
     padding: .5em;
     border-radius: .5em;
-    min-height: 40vh;
-    height: auto;
+    max-height: 40vh;
     box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, .4);
     cursor: pointer;
     transition: 0.5s;
@@ -439,23 +521,15 @@
     background-color: goldenrod;
 }
 
-.selected-moods-container {
-    text-align: center;
-    padding: .5em;
-    width: 90%;
-    height: 15vh;
-    overflow: scroll;
-}
-
 
 /* confirmation styling */
 
 .user-note-confirm {
-    width: 90%;
+    width: 100%;
     max-width: 600px;
     padding: .5em;
     border-radius: .5em;
-    height: 35vh;
+    height: 32vh;
     word-wrap: break-word;
     background-color: white;
     box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, .4);
@@ -468,7 +542,7 @@
 /* mood confirmation styling */
 
 .mood-confirm {
-    width: 90%;
+    width: 100%;
     max-width: 800px;
     text-align: left;
     margin-left: auto;
@@ -478,43 +552,37 @@
 
 /* mood log styling */
 
+.mood-log {
+    padding-top: 4em;
+    padding-bottom: 5em;
+    width: 100%;
+    max-width: 860px;
+    border-radius: .5em;
+    padding: .5em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .mood-log-container {
     width: 100%;
     height: 100%;
+    max-width: 700px;
     padding-left: 5%;
     padding-right: 5%;
-    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.mood-log {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-    width: 100%;
-    border-radius: .5em;
-    padding: .5em;
-}
-
-.log-container {
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: .5em;
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: .5em;
-    margin-bottom: 3em;
 }
 
 .log-back {
-    font-size: 4vw;
+    font-size: 100%;
     border: 2px solid goldenrod;
     background: rgba(255, 255, 255, 0.3);
     border-radius: .5em;
     color: goldenrod;
     padding: .5em;
     margin-left: 1em;
-    width: 16vw;
+    width: 24%;
+    max-width: 100px;
     margin-bottom: 1em;
     margin-top: 4em;
     cursor: pointer;
@@ -524,21 +592,32 @@
 .log-back:hover {
     cursor: pointer;
     background: teal;
+    border: 2px solid teal;
     opacity: .5;
     color: white;
+}
+
+.log-container {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: .5em;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: .5em;
+    margin-bottom: 3em;
 }
 
 .entry {
     position: relative;
     border-bottom: 2px solid grey;
-    margin-top: 1vw;
-    padding: .5vw;
-    padding-top: .5em;
+    margin-top: .3em;
+    padding: .2em;
     height: auto;
     text-align: left;
     overflow: auto;
     margin-left: -.5em;
     transition: 0.5s;
+    width: 100%;
 }
 
 .entry:hover {
@@ -549,36 +628,32 @@
 
 .delete-entry {
     position: absolute;
-    top: 1.6em;
-    right: 1.4em;
-    cursor: pointer;
+    top: 1em;
+    right: 1em;
 }
 
 .delete-image {
-    position: absolute;
-    top: -1.5em;
-    right: -1.5em;
-    cursor: pointer;
+    position: relative;
+    top: -1em;
+    right: 1em;
     width: 10vw;
-    height: 10vw;
+    max-width: 180px;
+    height: auto;
     transition: 0.5s;
 }
 
 .delete-image:hover {
-    width: 12vw;
-    height: 12vw;
     cursor: pointer;
 }
 
 .mLog-date {
-    font-size: 3.8vw;
+    font-size: 4vw;
     background-color: rgba(0, 128, 128, 0.5);
     border-radius: .7em;
     color: white;
     padding: .4em;
     margin-left: -.1em;
     overflow: visible;
-    margin-top: .5em;
     margin-bottom: 1em;
 }
 

@@ -24,10 +24,10 @@ export class Dashboard extends React.Component{
                     <h1>Hello {this.props.firstName}!</h1>
                     <h2>Welcome to Moodsense</h2>
                 </div>
-                <div className="circle-container" >
-                    <button  className="circle" onClick={this.onSelect}>
-                            <h2 className="dashboard-question-text">How are you feeling?</h2>
-                    </button>
+                <div className="circle-text" >
+                    <div onClick={this.onSelect}>
+                        How are you<span className="new-line">feeling?</span>
+                    </div>
                 </div>
             </div>
     )
