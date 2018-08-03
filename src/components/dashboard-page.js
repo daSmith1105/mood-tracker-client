@@ -25,7 +25,7 @@ export class Dashboard extends React.Component{
                     <h2>Welcome to Moodsense</h2>
                 </div>
                 <div className="circle-text" >
-                    <div onClick={this.onSelect}>
+                    <div onTouchStart={this.onSelect} onclick = "void(0)">
                         How are you<span className="new-line">feeling?</span>
                     </div>
                 </div>

@@ -57,9 +57,9 @@ export class SignupForm extends React.Component {
                 />
                 <hr />
                 </div>
-                <button className="redirect"
+                <button className="submit-registration"
                     type="submit"
-                    disabled={this.props.pristine || this.props.submitting}>
+                    disabled={this.props.pristine || this.props.submitting} onclick = "void(0)">
                     Let's Go!
                 </button>
             </form>

@@ -84,8 +84,6 @@ createEntry = () => {
     
             const data = [{  user: this.props.userId, moods: moodArray, note: userNote }];
 
-            console.log('New Entry:', data);
-
         fetch(`${API_BASE_URL}/mood-entries`, { 
             method: "POST",
             headers: {

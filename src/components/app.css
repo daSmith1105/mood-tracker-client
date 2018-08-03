@@ -121,12 +121,13 @@
 
 .landing-page {
     position: absolute;
-    top: 4em;
+    top: 10%;
     left: 0;
     right: 0;
     margin: auto;
     padding: .5em;
     padding-bottom: 1em;
+    margin-bottom: 4em;
     text-align: center;
     width: 90%;
     max-width: 600px;
@@ -136,17 +137,17 @@
 }
 
 .landing-welcome {
-    font-size: 130%;
+    font-size: 120%;
     margin-bottom: 0;
 }
 
 .landing-tagline {
-    font-size: 110%;
+    font-size: 100%;
     margin-top: 0;
 }
 
 .landing-description {
-    font-size: 90%;
+    font-size: 80%;
     font-style: italic;
     width: 90%;
     margin-left: auto;
@@ -207,7 +208,7 @@
 
 .login-heading,
 .signup-heading {
-    font-size: 160%;
+    font-size: 150%;
     margin: 0;
     margin-bottom: .5em;
 }
@@ -224,7 +225,7 @@
 }
 
 .demo {
-    font-size: 120%;
+    font-size: 110%;
 }
 
 .demo-info {
@@ -267,7 +268,7 @@
 
 .redirect {
     background-color: rgba(255, 255, 255, 0.6);
-    width: 80%;
+    width: 90%;
     margin-right: auto;
     margin-left: auto;
     border-radius: .5em;
@@ -563,6 +564,10 @@
     margin-right: auto;
 }
 
+.count {
+    font-size: 300%;
+}
+
 .mood-log-container {
     width: 100%;
     height: 100%;
@@ -600,7 +605,7 @@
 .log-container {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: .5em;
-    width: 98%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding: .5em;
@@ -628,33 +633,34 @@
 
 .delete-entry {
     position: absolute;
-    top: 1em;
-    right: 1em;
-}
-
-.delete-image {
-    position: relative;
-    top: -1em;
-    right: 1em;
-    width: 10vw;
-    max-width: 180px;
-    height: auto;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-image: url('../images/delete.png');
+    background-size: contain;
+    background-color: transparent;
+    border: none;
     transition: 0.5s;
 }
 
-.delete-image:hover {
+.delete-entry:hover {
     cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.date-container {
+    width: 85%;
+    background-color: rgba(0, 128, 128, 0.5);
+    border-radius: .7em;
+    border-radius: .7em;
+    margin-left: -.1em;
+    padding: .4em;
 }
 
 .mLog-date {
-    font-size: 4vw;
-    background-color: rgba(0, 128, 128, 0.5);
-    border-radius: .7em;
     color: white;
-    padding: .4em;
-    margin-left: -.1em;
-    overflow: visible;
-    margin-bottom: 1em;
 }
 
 
@@ -676,7 +682,9 @@
     margin: auto;
     margin-top: 25vh;
     width: 80vw;
+    max-width: 500px;
     height: 65vw;
+    max-height: 300px;
     background: rgba(255, 255, 255, .8);
     border-radius: .5em;
     padding: 5%;
@@ -684,16 +692,18 @@
 }
 
 .modal-container h1 {
-    font-size: 4.8vw;
+    font-size: 130%;
+    font-weight: bold;
 }
 
 .modal-container button {
-    margin-top: 10vh;
-    margin-left: 3vw;
-    margin-right: 3vw;
-    width: 18vw;
-    padding: .7em;
-    font-size: 4vw;
+    margin-top: 8%;
+    margin-left: 4%;
+    margin-right: 4%;
+    width: 30%;
+    max-width: 200px;
+    padding: .5em;
+    font-size: 100%;
     border: none;
     border-radius: .5em;
     background-color: goldenrod;
