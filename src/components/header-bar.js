@@ -38,7 +38,7 @@ export class HeaderBar extends React.Component {
     
         const LogoutLink = (props) => (
             <div className="logout-link">
-                <button onTouchStart={() => this.logOut()} onclick = "void(0)" className="logout-btn">Log out</button>
+                <button onClick={() => this.logOut()} className="logout-btn">Log out</button>
             </div>
         )
 

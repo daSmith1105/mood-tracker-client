@@ -18,28 +18,35 @@ class NoteComponent extends React.Component {
         this.setState({data: currentStepTwoData});
     };
 
+    renderUserData = () => {
+        return
+        <div>Hello</div>
+    }
+
 render() {
 
-    const UserMood = (props) => {
-        const stepData = this.props.props.step1;
-        if (stepData) {
-            return (
-            Object.keys(stepData).map((keyName, keyIndex) => {
-                return (
-                    <div key={keyName} id={keyIndex} className="mood-recap">
-                        <p>{keyName}
-                            <span className="intensity-recap">
-                                <span>{stepData[keyName]}</span>
-                            </span>
-                        </p>
-                    </div>
-                )
-                    })
-                )
-        } else {
-                return null
-        }
-    }
+    // const UserMood = (props) => {
+    //     return
+    //     <div>Hello</div>
+        // const stepData = this.props.props.step1;
+        // if (stepData) {
+        //     return (
+        //     Object.keys(stepData).map((keyName, keyIndex) => {
+        //         return (
+        //             <div key={keyName} id={keyIndex} className="mood-recap">
+        //                 <p>{keyName}
+        //                     <span className="intensity-recap">
+        //                         <span>{stepData[keyName]}</span>
+        //                     </span>
+        //                 </p>
+        //             </div>
+        //         )
+        //             })
+        //         )
+        // } else {
+        //         return null
+        // }
+    // }
 
     return (
         <div>
@@ -52,7 +59,8 @@ render() {
                 </Row>
                         <Row type={'flex'} align={'center'}>
                             <div className="selected-moods-container">
-                                 <UserMood />
+                                    {/* <UserMood /> */}
+                                    {this.renderUserData()}
                                  </div>
                         </Row>
                     <Row type={'flex'} align={'center'}>

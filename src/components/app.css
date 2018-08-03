@@ -63,7 +63,7 @@
 
 .home-link a:hover,
 .info-link a:hover,
-.logout-link a:hover {
+.logout-btn:hover {
     color: goldenrod;
     text-decoration: underline;
     cursor: pointer;

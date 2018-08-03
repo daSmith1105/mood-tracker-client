@@ -42,6 +42,7 @@ export class MoodNav extends Component {
     let currentStepResults = this.state.stepResults;
     currentStepResults.step2 = val;
     this.setState({currentStep: '3', stepResults: currentStepResults});
+    console.log(this.state.setpResults)
 };
 
 complete = (val) => {

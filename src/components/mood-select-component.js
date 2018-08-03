@@ -19,6 +19,7 @@ class MoodSelectComponent extends Component {
             let currentStepOneData = this.state.data;
             currentStepOneData.happy = el.target.value;
         this.setState({data: currentStepOneData});
+        console.log(this.state)
         };
     };
 
@@ -26,6 +27,7 @@ class MoodSelectComponent extends Component {
         let stateDataCopy = this.state.data;
         delete stateDataCopy.happy
         this.setState({ data: stateDataCopy })
+        console.log(this.state)
     };
 
     onChangeSad = (el) => {
@@ -35,6 +37,7 @@ class MoodSelectComponent extends Component {
             let currentStepOneData = this.state.data;
             currentStepOneData.sad = el.target.value;
         this.setState({data: currentStepOneData});
+        console.log(this.state)
         }
     };
 
@@ -42,6 +45,7 @@ class MoodSelectComponent extends Component {
         let stateDataCopy = this.state.data;
         delete stateDataCopy.sad
         this.setState({ data: stateDataCopy })
+        console.log(this.state)
     };
 
     onChangeExcited = (el) => {

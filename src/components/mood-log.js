@@ -160,8 +160,8 @@ render() {
             <div className="delete-modal">
                 <div className="modal-container">
                     <h1> Are you sure you want to delete this entry?</h1>
-                    <button onTouchStart={ () => (this.setState({delete: false}))} onclick = "void(0)" className="no-btn">No</button>
-                    <button onTouchStart={ () => (this.deleteEntry(this.state.deleteId)) } onclick = "void(0)">Yes</button>
+                    <button onClick={ () => (this.setState({delete: false}))} className="no-btn">No</button>
+                    <button onClick={ () => (this.deleteEntry(this.state.deleteId)) }>Yes</button>
                 </div>
             </div>
         )

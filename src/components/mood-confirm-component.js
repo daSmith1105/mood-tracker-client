@@ -30,9 +30,9 @@ render() {
             <div className="confirm-container">
             <Row type={'flex'} align={'center'} className={'p-lg'}>
                         <Col>
-                        <Button type={'primary'} ghost onTouchStart={() => {this.props.onPrevClick()}} onclick = "void(0)">Previous</Button>
+                        <Button type={'primary'} ghost onClick={() => {this.props.onPrevClick()}}>Previous</Button>
                             &nbsp;
-                            <Button type={'primary'} onTouchStart={() => {this.props.onNextClick(this.state.data)}} onclick = "void(0)">Next</Button>
+                            <Button type={'primary'} onClick={() => {this.props.onNextClick(this.state.data)}}>Next</Button>
                         </Col>
                     </Row>
                             <Row type={'flex'} align={'center'}>
