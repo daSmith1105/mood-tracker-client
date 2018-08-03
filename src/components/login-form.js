@@ -52,9 +52,7 @@ export class LoginForm extends React.Component {
                     <hr />
                 </div>
                 <button className="login-btn" disabled={this.props.pristine || this.props.submitting}>
-                    <span onPress={this.props.handleSubmit(values =>
-                    this.onSubmit(values)
-                )}>Log in</span>
+                    <span className="ios-click">Log in</span>
                 </button>
             </form>
         );

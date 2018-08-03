@@ -60,8 +60,7 @@ export class SignupForm extends React.Component {
                 <button className="submit-registration"
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
-                    <span onPress={this.props.handleSubmit(values =>
-                    this.onSubmit(values))}>
+                    <span className="ios-click">
                     Let's Go!
                     </span>
                 </button>

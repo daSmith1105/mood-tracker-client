@@ -4,6 +4,10 @@
     font-size: 16px;
 }
 
+.ios-click {
+    cursor: pointer;
+}
+
 
 /*header bar styling*/
 
