@@ -10,9 +10,9 @@ const initialState = {
     authToken: null, 
     currentUser: null,
     loading: false,
-    error: null,
-    info: true
+    error: null
 };
+
 export default function reducer(state = initialState, action) {
     if (action.type === SET_AUTH_TOKEN) {
         return Object.assign({}, state, {
