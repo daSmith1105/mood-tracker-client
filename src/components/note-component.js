@@ -6,7 +6,7 @@ import './app.css';
 import './antd.css';
 import './spacing.css';
 
-class NoteComponent extends React.Component {
+export class NoteComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -33,7 +33,7 @@ class NoteComponent extends React.Component {
         const UserMood = (props) => {
 
         const stepData = this.props.props.step1;
-        
+
         if (stepData) {
 
             return Object.keys(stepData).map((keyName, keyIndex) => {

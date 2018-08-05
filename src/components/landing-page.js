@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './app.css';
 
-export default function LandingPage(props) {
+export default function LandingPage (props) {
     return (
         <div className="landing-page">
             <h1 className="landing-welcome">Welcome to Moodsense</h1>

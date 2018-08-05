@@ -5,7 +5,7 @@ import history from './history';
 import { connect } from 'react-redux';
 const RadioGroup = Radio.Group;
 
-class MoodSelectComponent extends Component {
+export class MoodSelectComponent extends Component {
 
     constructor(props){
         super(props);

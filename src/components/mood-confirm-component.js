@@ -4,7 +4,7 @@ import './app.css';
 import './antd.css';
 import './spacing.css';
 
-class MoodConfirmComponent extends React.Component {
+export class MoodConfirmComponent extends React.Component {
 
     constructor(props){
         super(props);
