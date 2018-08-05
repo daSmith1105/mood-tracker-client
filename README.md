@@ -29,7 +29,7 @@ Note Entry Page
 ![Mobile Library Page](https://image.ibb.co/bHvpve/entry_confirm.png "entry_Confirm_Page")
 Entry confirmation Page
 
-![Mobile Library Page](https://image.ibb.co/gMh8oz/mood_log.png"mood_Log_Page")
+![Mobile Library Page](https://image.ibb.co/gMh8oz/mood_log.png "mood_Log_Page")
 Mood Log Page
 
 ## App Summary
