@@ -14,27 +14,30 @@ export class MoodLog extends React.Component {
             error: null,
             delete: false,
             deleteId: null,
-            count: ''
+            count: null,
+            noData: false
         }
 
         this.getData = this.getData.bind(this);
         this.formatDate = this.formatDate.bind(this);
         this.deleteEntry = this.deleteEntry.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+
+    }
+    
+    componentWillMount() {
+        if(!this.props.loggedIn || !this.props.userId  === null) {
+            history.push('/login') 
+            console.log('Forbidden: Login Required')
+       }
     }
 
     componentDidMount() {
-
-        if(!this.props.loggedIn) {
-             history.push('/login') 
-             console.log('Forbidden: Login Required')
-        } else {
             this.getData()
             this.setState({
                 loading: true
             })
-        }
-    }   
+        } 
     
     getData = () => {
         fetch(`${API_BASE_URL}/mood-entries/` + this.props.userId)
@@ -42,9 +45,15 @@ export class MoodLog extends React.Component {
         .then((data) => { 
             this.setState({ 
                 moodData: data,
-                loading: false
+                loading: false,
+                count: Object.keys(data.entries).length
             }) 
-        });
+        })
+        .catch(
+            this.setState({
+                noData: true
+            })
+        )
     }
 
     formatDate = (date) => (moment(date).format("dddd, MMMM Do YYYY, h:mm:ss a"));
@@ -65,8 +74,8 @@ export class MoodLog extends React.Component {
             this.getData,
             this.setState ({
                 delete: false
-            }))
-            .catch(err => console.error(err))
+        }))
+        .catch(err => console.error(err))
     }
 
     mappedEntries = () => {
@@ -120,41 +129,41 @@ export class MoodLog extends React.Component {
 
         let entries = this.state.moodData.entries;
         return entries.map( entry => {
-            return <div key={entry._id} className="entry">
-            
+            return  <div key={entry._id} className="entry">  
                         <button className="delete-entry" onClick={() => this.handleDelete(entry._id)}></button>
 
                         <div className="date-container">
                             <span className="mLog-date">{this.formatDate(entry.created)}</span>
                         </div>
                         <div style={moodblockcontainer}>{
-                                entry.moods.map( mood => {
-                                    return (
-                                        <div key={mood._id} style={moodblock}>
+                            entry.moods.map( mood => {
+                                return (
+                                    <div key={mood._id} style={moodblock}>
 
-                                                <span style={moodtype}>{mood.moodType}</span>
-                                                <span style={moodint}>{mood.intensity}</span>
+                                            <span style={moodtype}>{mood.moodType}</span>
+                                            <span style={moodint}>{mood.intensity}</span>
 
-                                        </div>
-                                        )
-                                    })
-                                }
+                                    </div>
+                                    )
+                                })
+                            }
                         </div>
                         <br />
                         <div style={moodnote}>{entry.note}</div>
                     </div>
-            })
-        }
+                })
+            }
 
 render() { 
 
     const NavBack = (props) => {
         return (
             <div>
-                <button onClick={history.goBack} className="log-back">Back</button>
+                <button onClick={() => history.push('./dashboard')} className="log-back">Back</button>
             </div>
         )
     }
+
     const ConfirmDelete = (props) => {
         return (
             <div className="delete-modal">
@@ -168,6 +177,7 @@ render() {
     }
 
     let body;
+
         if (this.state.error) {
             body = (
                 <div className="message message-error">{this.state.error}</div>
@@ -186,11 +196,14 @@ render() {
 
         return (
             <div className="mood-log">
-                    <NavBack />
-                    <div className="log-container">
-                        {this.state.delete ? <ConfirmDelete /> : null}
-                        {body}
-                    </div>
+                <NavBack />
+                <div className="log-container">
+                    {this.state.delete ? <ConfirmDelete /> : null}
+                    <span className="entry-count">
+                        {'You have ' + this.state.count + ' entries'}
+                    </span>
+                    {body}
+                </div>
             </div>
         )
     }

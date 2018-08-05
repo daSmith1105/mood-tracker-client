@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Row, Col, Radio, Button } from 'antd';
 import {Link} from 'react-router-dom';
+import history from './history';
+import { connect } from 'react-redux';
 const RadioGroup = Radio.Group;
 
 class MoodSelectComponent extends Component {
@@ -9,26 +11,33 @@ class MoodSelectComponent extends Component {
         super(props);
         this.state = {
             data: {}
+
         };
     }
+    
+    componentDidMount() {
 
-    onChangeHappy= (el) => {
+        if(!this.props.loggedIn || !this.props.userId) {
+             history.push('/login') 
+             console.log('Forbidden: Login Required')
+        }
+    }   
+
+    onChangeHappy = (el) => {
         if (!el.target.value || el.target.value.keyname === 0) {
             this.setState({data: this.state.data});
         } else {
             let currentStepOneData = this.state.data;
             currentStepOneData.happy = el.target.value;
         this.setState({data: currentStepOneData});
-        console.log(this.state)
-        };
-    };
+        }
+    }
 
     clearHappy = () => {
         let stateDataCopy = this.state.data;
         delete stateDataCopy.happy
         this.setState({ data: stateDataCopy })
-        console.log(this.state)
-    };
+    }
 
     onChangeSad = (el) => {
         if (!el.target.value || el.target.value.keyname === 0) {
@@ -37,16 +46,14 @@ class MoodSelectComponent extends Component {
             let currentStepOneData = this.state.data;
             currentStepOneData.sad = el.target.value;
         this.setState({data: currentStepOneData});
-        console.log(this.state)
         }
-    };
+    }
 
     clearSad = () => {
         let stateDataCopy = this.state.data;
         delete stateDataCopy.sad
         this.setState({ data: stateDataCopy })
-        console.log(this.state)
-    };
+    }
 
     onChangeExcited = (el) => {
          if (!el.target.value || el.target.value.keyname === 0) {
@@ -56,13 +63,13 @@ class MoodSelectComponent extends Component {
              currentStepOneData.excited = el.target.value;
          this.setState({data: currentStepOneData});
          }
-     };
+     }
 
      clearExcited = () => {
         let stateDataCopy = this.state.data;
         delete stateDataCopy.excited
         this.setState({ data: stateDataCopy })
-    };
+    }
 
      onChangeGoofy = (el) => {
          if (!el.target.value || el.target.value.keyname === 0) {
@@ -72,13 +79,13 @@ class MoodSelectComponent extends Component {
              currentStepOneData.goofy = el.target.value;
          this.setState({data: currentStepOneData});
          }
-     };
+     }
 
      clearGoofy = () => {
         let stateDataCopy = this.state.data;
         delete stateDataCopy.goofy
         this.setState({ data: stateDataCopy })
-    };
+    }
 
      onChangeMotivated = (el) => {
          if (!el.target.value || el.target.value.keyname === 0) {
@@ -88,7 +95,7 @@ class MoodSelectComponent extends Component {
              currentStepOneData.motivated = el.target.value;
          this.setState({data: currentStepOneData});
          }
-     };
+     }
 
      clearMotivated = () => {
         let stateDataCopy = this.state.data;
@@ -104,13 +111,14 @@ class MoodSelectComponent extends Component {
              currentStepOneData.confused = el.target.value;
          this.setState({data: currentStepOneData});
          }
-     };
+     }
 
      clearConfused = () => {
         let stateDataCopy = this.state.data;
         delete stateDataCopy.confused
         this.setState({ data: stateDataCopy })
-    };
+    }
+
      onChangeRelieved = (el) => {
          if (!el.target.value || el.target.value.keyname === 0) {
              this.setState({data: this.state.data});
@@ -119,16 +127,177 @@ class MoodSelectComponent extends Component {
              currentStepOneData.relieved = el.target.value;
          this.setState({data: currentStepOneData});
          }
-     };
+     }
 
      clearRelieved = () => {
         let stateDataCopy = this.state.data;
         delete stateDataCopy.relieved
         this.setState({ data: stateDataCopy })
-    };
+    }
+
+    onChangeContent= (el) => {
+        if (!el.target.value || el.target.value.keyname === 0) {
+            this.setState({data: this.state.data});
+        } else {
+            let currentStepOneData = this.state.data;
+            currentStepOneData.content = el.target.value;
+        this.setState({data: currentStepOneData});
+        }
+    }
+
+    clearContent= () => {
+        let stateDataCopy = this.state.data;
+        delete stateDataCopy.content
+        this.setState({ data: stateDataCopy })
+    }
+
+    onChangeHopeful= (el) => {
+        if (!el.target.value || el.target.value.keyname === 0) {
+            this.setState({data: this.state.data});
+        } else {
+            let currentStepOneData = this.state.data;
+            currentStepOneData.hopeful = el.target.value;
+        this.setState({data: currentStepOneData});
+        }
+    }
+
+    clearHopeful = () => {
+        let stateDataCopy = this.state.data;
+        delete stateDataCopy.hopeful
+        this.setState({ data: stateDataCopy })
+    }
+
+    onChangeAnxious = (el) => {
+        if (!el.target.value || el.target.value.keyname === 0) {
+            this.setState({data: this.state.data});
+        } else {
+            let currentStepOneData = this.state.data;
+            currentStepOneData.anxious = el.target.value;
+        this.setState({data: currentStepOneData});
+        }
+    }
+
+    clearAnxious = () => {
+        let stateDataCopy = this.state.data;
+        delete stateDataCopy.anxious
+        this.setState({ data: stateDataCopy })
+    }
+
+    onChangeBlah = (el) => {
+        if (!el.target.value || el.target.value.keyname === 0) {
+            this.setState({data: this.state.data});
+        } else {
+            let currentStepOneData = this.state.data;
+            currentStepOneData.blah = el.target.value;
+        this.setState({data: currentStepOneData});
+        }
+    }
+
+    clearBlah = () => {
+        let stateDataCopy = this.state.data;
+        delete stateDataCopy.blah
+        this.setState({ data: stateDataCopy })
+    }
+
+    onChangeScared = (el) => {
+        if (!el.target.value || el.target.value.keyname === 0) {
+            this.setState({data: this.state.data});
+        } else {
+            let currentStepOneData = this.state.data;
+            currentStepOneData.scared = el.target.value;
+        this.setState({data: currentStepOneData});
+        }
+    }
+
+    clearScared = () => {
+        let stateDataCopy = this.state.data;
+        delete stateDataCopy.scared
+        this.setState({ data: stateDataCopy })
+    }
+
+    onChangeTired = (el) => {
+        if (!el.target.value || el.target.value.keyname === 0) {
+            this.setState({data: this.state.data});
+        } else {
+            let currentStepOneData = this.state.data;
+            currentStepOneData.tired= el.target.value;
+        this.setState({data: currentStepOneData});
+        }
+    }
+
+    clearTired = () => {
+        let stateDataCopy = this.state.data;
+        delete stateDataCopy.tired
+        this.setState({ data: stateDataCopy })
+    }
+
+    onChangeLonely= (el) => {
+        if (!el.target.value || el.target.value.keyname === 0) {
+            this.setState({data: this.state.data});
+        } else {
+            let currentStepOneData = this.state.data;
+            currentStepOneData.lonely = el.target.value;
+        this.setState({data: currentStepOneData});
+        }
+    }
+
+    clearLonely= () => {
+        let stateDataCopy = this.state.data;
+        delete stateDataCopy.lonely
+        this.setState({ data: stateDataCopy })
+    }
+
+    onChangeHurt = (el) => {
+        if (!el.target.value || el.target.value.keyname === 0) {
+            this.setState({data: this.state.data});
+        } else {
+            let currentStepOneData = this.state.data;
+            currentStepOneData.hurt = el.target.value;
+        this.setState({data: currentStepOneData});
+        }
+    }
+
+    clearHurt = () => {
+        let stateDataCopy = this.state.data;
+        delete stateDataCopy.hurt
+        this.setState({ data: stateDataCopy })
+    }
+
+    onChangeIrritated = (el) => {
+        if (!el.target.value || el.target.value.keyname === 0) {
+            this.setState({data: this.state.data});
+        } else {
+            let currentStepOneData = this.state.data;
+            currentStepOneData.irritated= el.target.value;
+        this.setState({data: currentStepOneData});
+        }
+    }
+
+    clearIrritated = () => {
+        let stateDataCopy = this.state.data;
+        delete stateDataCopy.irritated
+        this.setState({ data: stateDataCopy })
+    }
+
+    onChangeAngry = (el) => {
+        if (!el.target.value || el.target.value.keyname === 0) {
+            this.setState({data: this.state.data});
+        } else {
+            let currentStepOneData = this.state.data;
+            currentStepOneData.angry = el.target.value;
+        this.setState({data: currentStepOneData});
+        }
+    }
+
+    clearAngry = () => {
+        let stateDataCopy = this.state.data;
+        delete stateDataCopy.angry
+        this.setState({ data: stateDataCopy })
+    }
+
 
     render() {
-
+        
         return (
             <div className="mood-select-container">
                 <Row type={'flex'} align={'center'} className={'p-lg'}>
@@ -140,7 +309,7 @@ class MoodSelectComponent extends Component {
                 </Row>
                 
                 <Row type={'flex'} align={'center'} className={'p-md'}>
-
+                
                     <Col span={24} className="mood-choice-container"> 
                         <Row type={'flex'} align={'center'}>
                             <Col span={6}>
@@ -359,8 +528,8 @@ class MoodSelectComponent extends Component {
                             </Col>
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
-                                <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                <RadioGroup onChange={this.onChangeContent}>
+                                    <Radio onClick={this.clearContent} defaultChecked>
                                         <span className="bold">N/A</span>
                                     </Radio>
                                     <Radio value={1} >
@@ -389,8 +558,8 @@ class MoodSelectComponent extends Component {
                             </Col>
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
-                                <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                <RadioGroup onChange={this.onChangeHopeful}>
+                                    <Radio onClick={this.clearHopeful} defaultChecked>
                                         <span className="bold">N/A</span>
                                     </Radio>
                                     <Radio value={1} >
@@ -419,8 +588,8 @@ class MoodSelectComponent extends Component {
                             </Col>
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
-                                <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                <RadioGroup onChange={this.onChangeAnxious}>
+                                    <Radio onClick={this.clearAnxious} defaultChecked>
                                         <span className="bold">N/A</span>
                                     </Radio>
                                     <Radio value={1} >
@@ -449,8 +618,8 @@ class MoodSelectComponent extends Component {
                             </Col>
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
-                                <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                <RadioGroup onChange={this.onChangeBlah}>
+                                    <Radio onClick={this.clearBlah} defaultChecked>
                                         <span className="bold">N/A</span>
                                     </Radio>
                                     <Radio value={1} >
@@ -479,8 +648,8 @@ class MoodSelectComponent extends Component {
                             </Col>
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
-                                <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                <RadioGroup onChange={this.onChangeScared}>
+                                    <Radio onClick={this.clearScared} defaultChecked>
                                         <span className="bold">N/A</span>
                                     </Radio>
                                     <Radio value={1} >
@@ -509,8 +678,8 @@ class MoodSelectComponent extends Component {
                             </Col>
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
-                                <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                <RadioGroup onChange={this.onChangeTired}>
+                                    <Radio onClick={this.clearTired} defaultChecked>
                                         <span className="bold">N/A</span>
                                     </Radio>
                                     <Radio value={1} >
@@ -539,8 +708,8 @@ class MoodSelectComponent extends Component {
                             </Col>
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
-                                <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                <RadioGroup onChange={this.onChangeLonely}>
+                                    <Radio onClick={this.clearLonely} defaultChecked>
                                         <span className="bold">N/A</span>
                                     </Radio>
                                     <Radio value={1} >
@@ -569,8 +738,8 @@ class MoodSelectComponent extends Component {
                             </Col>
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
-                                <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                <RadioGroup onChange={this.onChangeHurt}>
+                                    <Radio onClick={this.clearHurt} defaultChecked>
                                         <span className="bold">N/A</span>
                                     </Radio>
                                     <Radio value={1} >
@@ -599,8 +768,8 @@ class MoodSelectComponent extends Component {
                             </Col>
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
-                                <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                <RadioGroup onChange={this.onChangeIrritated}>
+                                    <Radio onClick={this.clearIrritated} defaultChecked>
                                         <span className="bold">N/A</span>
                                     </Radio>
                                     <Radio value={1} >
@@ -629,8 +798,8 @@ class MoodSelectComponent extends Component {
                             </Col>
                             <Col span={18}>
                                 <p className="intensity-label">Intensity Level</p>
-                                <RadioGroup onChange={this.onChangeSad}>
-                                    <Radio onClick={this.clearRelieved} defaultChecked>
+                                <RadioGroup onChange={this.onChangeAngry}>
+                                    <Radio onClick={this.clearAngry} defaultChecked>
                                         <span className="bold">N/A</span>
                                     </Radio>
                                     <Radio value={1} >
@@ -653,8 +822,16 @@ class MoodSelectComponent extends Component {
 
                 </Row>
             </div>
-        );
+        )
     }
 }
 
-export default MoodSelectComponent;
+const mapStateToProps = state => {
+    const {currentUser} = state.auth;
+        return {
+            loggedIn: state.auth.currentUser !== null,
+            userId: `${currentUser.id}`
+        };
+};
+
+export default connect(mapStateToProps)(MoodSelectComponent);

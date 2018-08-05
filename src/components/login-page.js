@@ -36,7 +36,7 @@ export function LoginPage(props) {
             <SignupLink />
             </div>
         </div>
-    );
+    )
 }
 
 const mapStateToProps = state => ({

@@ -16,10 +16,8 @@ export class App extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (!prevProps.loggedIn && this.props.loggedIn) {
-            // When we are logged in, refresh the auth token periodically
             this.startPeriodicRefresh();
         } else if (prevProps.loggedIn && !this.props.loggedIn) {
-            // Stop refreshing when we log out
             this.stopPeriodicRefresh();
         }
     }
@@ -44,13 +42,13 @@ export class App extends React.Component {
     }
 
   
-  render() {
-    return (
+    render() {
+        return (
             <div className="App">
               <Router history={history}>
                 <div>
                     <HeaderBar />
-                    <FooterBar />
+                    {this.props.loggedIn && <FooterBar />}
                     <main>
                       <Route exact path="/" component={LandingPage}/>
                       <Route exact path="/login" component={LoginPage}/>
@@ -62,8 +60,8 @@ export class App extends React.Component {
                 </div>
               </Router>
             </div>
-    );
-  }
+        );
+    }
 }
 
 const mapStateToProps = state => ({

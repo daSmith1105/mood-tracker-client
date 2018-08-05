@@ -42,14 +42,14 @@ export class HeaderBar extends React.Component {
             </div>
         )
 
-    return (
-        <div className="header">
-            {this.props.loggedIn ? <HomeLink /> : <InfoLink />}
-            <AppTitle />
-            {this.props.loggedIn ? <LogoutLink /> : null}
-        </div>
-    )
-}
+        return (
+            <div className="header">
+                {this.props.loggedIn ? <HomeLink /> : <InfoLink />}
+                <AppTitle />
+                {this.props.loggedIn ? <LogoutLink /> : null}
+            </div>
+        )
+    }
 }
 
 const mapStateToProps = state => ({

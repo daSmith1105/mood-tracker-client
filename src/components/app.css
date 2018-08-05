@@ -159,7 +159,7 @@
 }
 
 .landing-bullets {
-    font-size: 85%;
+    font-size: 78%;
     font-weight: bold;
     width: 100%;
     max-width: 300px;
@@ -357,6 +357,9 @@
 
 .circle-text:hover {
     cursor: pointer;
+    opacity: .8;
+    width: 50%;
+    color: white;
 }
 
 .circle-text:after {
@@ -387,7 +390,6 @@
 }
 
 .circle-text div:hover {
-    font-size: 170%;
     color: white;
 }
 
@@ -568,8 +570,14 @@
     margin-right: auto;
 }
 
-.count {
-    font-size: 300%;
+.entry-count {
+    font-size: 120%;
+    position: absolute;
+    top: -3em;
+    right: 0;
+    padding: .25em;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: .5em;
 }
 
 .mood-log-container {
@@ -607,6 +615,7 @@
 }
 
 .log-container {
+    position: relative;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: .5em;
     width: 100%;
@@ -722,4 +731,59 @@
     color: goldenrod;
     border: 2px solid goldenrod;
     cursor: pointer;
+}
+
+
+/* no data modal */
+
+.noData-modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    overflow-y: hidden;
+    text-align: center;
+}
+
+.noData-modal-container {
+    margin: auto;
+    margin-top: 25vh;
+    width: 80vw;
+    max-width: 500px;
+    height: 65vw;
+    max-height: 300px;
+    background: rgba(255, 255, 255, .8);
+    border-radius: .5em;
+    padding: 5%;
+    box-shadow: 2px 4px 4px 6px rgba(0, 0, 0, .5);
+}
+
+.noData-modal-container h1 {
+    font-size: 130%;
+    font-weight: bold;
+}
+
+.again-btn {
+    margin-top: 8%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    max-width: 500px;
+    padding: .5em;
+    font-size: 100%;
+    border-radius: .5em;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    transition: 0.5s;
+    background: rgba(0, 0, 0, 0);
+    color: goldenrod;
+    border: 2px solid goldenrod;
+}
+
+.again-btn:hover {
+    background-color: goldenrod;
+    color: white;
 }

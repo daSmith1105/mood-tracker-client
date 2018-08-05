@@ -16,22 +16,23 @@ export class Dashboard extends React.Component{
           state: {userId: this.props.userId} 
         })
     }
+
     render() {
 
-    return (
-             <div className="dashboard">
-                <div className="dashboard-greeting">
-                    <h1>Hello {this.props.firstName}!</h1>
-                    <h2>Welcome to Moodsense</h2>
-                </div>
-                <div className="circle-text" >
-                    <div onClick={this.onSelect}>
-                        How are you<span className="new-line">feeling?</span>
+        return (
+                <div className="dashboard">
+                    <div className="dashboard-greeting">
+                        <h1>Hello {this.props.firstName}!</h1>
+                        <h2>Welcome to Moodsense</h2>
+                    </div>
+                    <div className="circle-text" >
+                        <div onClick={this.onSelect}>
+                            How are you<span className="new-line">feeling?</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-    )
-}
+            )
+         }
 }
 
 const mapStateToProps = state => {

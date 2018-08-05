@@ -20,6 +20,7 @@ export class LoginForm extends React.Component {
                 </div>
             );
         }
+        
         return (
             <form style={{textAlign: 'center', maxWidth: '500px', margin: 'auto'}}
                 className="login-form"
