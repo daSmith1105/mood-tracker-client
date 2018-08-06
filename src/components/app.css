@@ -261,8 +261,6 @@
     border-radius: .5em;
     margin-bottom: 1em;
     margin-top: .25em;
-    transition: 0.5s;
-    z-index: 10;
 }
 
 .login button:hover,
@@ -288,6 +286,11 @@
 .redirect a:hover {
     color: teal;
     text-decoration: underline;
+    cursor: pointer;
+}
+
+.submit-registration,
+.login-btn {
     cursor: pointer;
 }
 
