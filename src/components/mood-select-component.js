@@ -580,7 +580,7 @@ export class MoodSelectComponent extends Component {
                         <hr />
                     </Col>
 
-                    <Col span={24}>
+                    <Col span={24} className="mood-choice-container">
                         <Row type={'flex'} align={'center'}>
                             <Col span={6}>
                             <img src={require("../resources/anxious.png")} alt="anxious" className="mood-img"/>
