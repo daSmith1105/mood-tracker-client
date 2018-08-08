@@ -83,7 +83,7 @@ export class MoodLog extends React.Component {
             width:'100%',
             height: '14vw',
             maxHeight:'60px',
-            overflow: 'scroll',
+            overflow: 'auto',
             padding: '.15em',
             paddingTop: '.25em',
         }
@@ -117,7 +117,7 @@ export class MoodLog extends React.Component {
             width:'100%',
             height: '14vh',
             maxHeight: '90px',
-            overflow: 'scroll',
+            overflow: 'auto',
             padding: '.5em',
             border: '1px solid rgba(0,0,0,0.5)',
             borderRadius: '.5em',

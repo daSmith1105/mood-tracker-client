@@ -55,7 +55,7 @@ export class NoteComponent extends React.Component {
         return (
             <div>
                 <Row type={'flex'} align={'center'} className={'p-lg'}>
-                    <Col style={{position: 'fixed', top: '9em'}}>
+                    <Col style={{ marginTop: '-2em'}}>
                         <Button type={'primary'} ghost onClick={() => {
                             this.props.onPrevClick()
                         }}>Previous</Button>

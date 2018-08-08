@@ -492,7 +492,7 @@
     width: 100%;
     max-width: 600px;
     height: 14vh;
-    overflow: scroll;
+    overflow: auto;
     margin-top: -1em;
     margin-bottom: 1em;
 }
@@ -543,6 +543,7 @@
     text-align: left;
     cursor: pointer;
     background-color: lightyellow;
+    overflow: auto;
 }
 
 
@@ -554,6 +555,7 @@
     text-align: left;
     margin-left: auto;
     margin-right: auto;
+    overflow: auto;
 }
 
 
@@ -632,7 +634,6 @@
     padding: .2em;
     height: auto;
     text-align: left;
-    overflow: auto;
     margin-left: -.5em;
     transition: 0.5s;
     width: 100%;
