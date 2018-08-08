@@ -267,6 +267,7 @@
 .signup button:hover {
     opacity: .8;
     width: 80%;
+    cursor: pointer;
 }
 
 .redirect {

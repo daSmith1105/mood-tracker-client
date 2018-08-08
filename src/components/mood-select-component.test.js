@@ -3,7 +3,7 @@ import {shallow} from 'enzyme';
 
 import {MoodSelectComponent} from './mood-select-component';
 
-describe('<AMoodSelectComponent />', () => {
+describe('<MoodSelectComponent />', () => {
     it('Renders without crashing', () => {
         shallow(<MoodSelectComponent />);
     });

@@ -20,7 +20,7 @@ export class LoginForm extends React.Component {
                 </div>
             );
         }
-        
+
         return (
             <form style={{textAlign: 'center', maxWidth: '500px', margin: 'auto'}}
                 className="login-form"
@@ -52,7 +52,7 @@ export class LoginForm extends React.Component {
                         </div>
                     <hr />
                 </div>
-                <button className="login-btn" disabled={this.props.pristine || this.props.submitting}>
+                <button className="login-btn" type="submit" disabled={this.props.pristine || this.props.submitting}>
                     <span className="ios-click">Log in</span>
                 </button>
             </form>
