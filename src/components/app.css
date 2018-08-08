@@ -411,11 +411,6 @@
     text-align: center;
 }
 
-.fixed {
-    position: fixed;
-    padding: 8vw;
-}
-
 
 /* mood select styling */
 
@@ -694,6 +689,7 @@
     z-index: 5;
     overflow-y: hidden;
     text-align: center;
+    transition: 0.5s;
 }
 
 .modal-container {
@@ -751,6 +747,7 @@
     z-index: 5;
     overflow-y: hidden;
     text-align: center;
+    transition: 0.5s;
 }
 
 .noData-modal-container {
