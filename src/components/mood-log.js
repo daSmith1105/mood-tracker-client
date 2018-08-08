@@ -40,7 +40,7 @@ export class MoodLog extends React.Component {
         } 
     
     getData = () => {
-        fetch(`${API_BASE_URL}/mood-entries/` + this.props.userId)
+        fetch(`${API_BASE_URL}/api/mood-entries/` + this.props.userId)
         .then(data => data.json())
         .then((data) => { 
             this.setState({ 
@@ -66,7 +66,7 @@ export class MoodLog extends React.Component {
     }
 
     deleteEntry = (_id) => {
-        fetch(`${API_BASE_URL}/mood-entries/${_id}`, { method: "DELETE" })
+        fetch(`${API_BASE_URL}/api/mood-entries/${_id}`, { method: "DELETE" })
         .then(res => {
             console.log('Deleted:', res.url)
         })
@@ -159,7 +159,7 @@ render() {
     const NavBack = (props) => {
         return (
             <div>
-                <button onClick={() => history.push('./dashboard')} className="log-back">Back</button>
+                <button onClick={() => history.push('/dashboard')} className="log-back">Back</button>
             </div>
         )
     }

@@ -92,7 +92,7 @@ export class MoodNav extends Component {
             
                     const data = [{  user: this.props.userId, moods: moodArray, note: userNote }];
 
-                    fetch(`${API_BASE_URL}/mood-entries`, { 
+                    fetch(`${API_BASE_URL}/api/mood-entries`, { 
                         method: "POST",
                         headers: {
                             'Accept': 'application/json',
@@ -101,7 +101,7 @@ export class MoodNav extends Component {
                         body: JSON.stringify(data)
                     })
                         .then(function(response) { 
-                            history.push('./mood-log')
+                            history.push('/mood-log')
                     })
                     .catch (
                         function(error) {
