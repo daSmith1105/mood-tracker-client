@@ -603,7 +603,7 @@
     margin-bottom: 1em;
     margin-top: 4em;
     cursor: pointer;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .log-back:hover {
@@ -703,6 +703,7 @@
     border-radius: .5em;
     padding: 5%;
     box-shadow: 2px 4px 4px 6px rgba(0, 0, 0, .5);
+    transition: 0.5s;
 }
 
 .modal-container h1 {
@@ -761,6 +762,7 @@
     border-radius: .5em;
     padding: 5%;
     box-shadow: 2px 4px 4px 6px rgba(0, 0, 0, .5);
+    transition: 0.5s;
 }
 
 .noData-modal-container h1 {
