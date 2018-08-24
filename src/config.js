@@ -1,2 +1,2 @@
 export const API_BASE_URL =
-'https://intense-falls-43435.herokuapp.com/api' || 'http://localhost:8080/api';
+'https://dasmith1105.github.io/moodsense-server/api' || 'http://localhost:8080/api';

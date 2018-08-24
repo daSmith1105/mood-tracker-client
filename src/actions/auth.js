@@ -47,7 +47,7 @@ export const login = (username, password) => dispatch => {
     dispatch(authRequest());
     //console.log(API_BASE_URL);
     return (
-        fetch(`https://intense-falls-43435.herokuapp.com/api/auth/login`, {
+        fetch(`https://dasmith1105.github.io/moodsense-server/api/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
