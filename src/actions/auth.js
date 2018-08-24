@@ -45,9 +45,9 @@ const storeAuthInfo = (authToken, dispatch) => {
 
 export const login = (username, password) => dispatch => {
     dispatch(authRequest());
-    console.log(API_BASE_URL);
+    //console.log(API_BASE_URL);
     return (
-        fetch(`${API_BASE_URL}/api/auth/login`, {
+        fetch(`https://intense-falls-43435.herokuapp.com/api/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
