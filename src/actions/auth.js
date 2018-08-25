@@ -47,7 +47,7 @@ export const login = (username, password) => dispatch => {
     dispatch(authRequest());
     console.log(API_BASE_URL);
     return (
-        fetch(`https://intense-falls-43435.herokuapp.com/api/auth/login`, {
+        fetch(`${API_BASE_URL}auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -83,7 +83,7 @@ export const login = (username, password) => dispatch => {
 export const refreshAuthToken = () => (dispatch, getState) => {
     dispatch(authRequest());
     const authToken = getState().auth.authToken;
-    return fetch(`https://intense-falls-43435.herokuapp.com/api/auth/refresh`, {
+    return fetch(`${API_BASE_URL}auth/refresh`, {
         method: 'POST',
         headers: {
             // Provide our existing token as credentials to get a new one
