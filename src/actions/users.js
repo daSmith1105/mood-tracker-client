@@ -4,7 +4,7 @@ import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
 export const registerUser = user => dispatch => {
-    return fetch(`https://dasmith1105.github.io/moodsense-server/api/users`, {
+    return fetch(`${API_BASE_URL}/api/users`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
