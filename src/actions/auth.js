@@ -45,9 +45,9 @@ const storeAuthInfo = (authToken, dispatch) => {
 
 export const login = (username, password) => dispatch => {
     dispatch(authRequest());
-    console.log(API_BASE_URL);
+    //console.log(API_BASE_URL);
     return (
-        fetch(`${API_BASE_URL}/api/auth/login`, {
+        fetch(`https://dasmith1105.github.io/moodsense-server/api/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
